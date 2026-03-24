@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>云起日复盘看板</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6fb; color:#222; margin:0; }
+    .page { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero { background:#fff; border-radius:16px; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,0.06); margin-bottom:20px; }
+    .hero h1 { margin:0 0 10px 0; }
+    .hero p { margin:0; color:#555; line-height:1.7; }
+    .summary-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:20px; }
+    .summary-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .summary-card h2 { margin:0 0 10px 0; font-size:20px; }
+    .summary-card ul { margin:0; padding-left:20px; color:#444; line-height:1.8; }
+    .summary-date { display:inline-block; margin-top:10px; padding:4px 10px; border-radius:999px; background:#eef3ff; color:#315efb; font-size:13px; }
+    .group-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; }
+    .group-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .group-header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+    .group-header h2 { margin:0; font-size:20px; }
+    .group-meta { color:#315efb; font-size:13px; }
+    .group-observation { margin-top:10px; color:#555; line-height:1.7; }
+    .asset-list { margin-top:14px; display:flex; flex-direction:column; gap:10px; }
+    .asset-item { display:block; padding:12px 14px; background:#f8faff; border-radius:10px; text-decoration:none; color:#222; border:1px solid #e7ecf5; }
+    .asset-item:hover { background:#eef4ff; border-color:#c9dafc; }
+    .asset-name { font-weight:600; }
+    .asset-meta { margin-top:4px; color:#666; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <h1>云起日复盘看板</h1>
+      <p>按“先结论，再看宽基与板块细节”的方式查看。点击任一标的即可进入详情页，查看对应日K图、周K图、辅助线和复盘结论。</p>
+      <div class="summary-date">复盘日期：2026-03-24</div>
+    </div>
+    <div class="summary-grid">
+      <section class="summary-card">
+        <h2>当天主要复盘结论</h2>
+        <ul>
+          <li>宽基整体偏弱，创业板指 / 科创50 / 北证50处在趋势转弱阶段，先看修复力度，不急着下结论。</li><li>能源相对更强，但量价已有冲高特征，当前更适合看确认，不适合追涨。</li><li>军工 / 金融 / 消费偏弱，现阶段先按观察处理，核心看是否能回到关键位上方。</li>
+        </ul>
+      </section>
+      <section class="summary-card">
+        <h2>明日重点观察位</h2>
+        <ul>
+          <li>上证指数：3794.68-4197.23 / 中期高低点 3794.68-4197.23</li><li>深证成指：13169.25-14536.08 / 中期高低点 13070.73-14536.08</li><li>科技：重点看 电子化学品 / 元件，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</li>
+        </ul>
+      </section>
+    </div>
+    <div class="group-grid">
+      
+            <section class="group-card">
+              <div class="group-header">
+                <h2>军工</h2>
+                <div class="group-meta">趋势转弱 | 缩量反弹 / 高位直落</div>
+              </div>
+              <div class="group-observation">重点看 船舶制造 / 航天航空，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/军工_航天航空.html">
+                  <div class="asset-name">航天航空</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/军工_船舶制造.html">
+                  <div class="asset-name">船舶制造</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>医药</h2>
+                <div class="group-meta">趋势转弱 | 高位直落</div>
+              </div>
+              <div class="group-observation">重点看 化学制药 / 医药商业，组内多为高位直落，当前位置尚未横住</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/医药_中药.html">
+                  <div class="asset-name">中药</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/医药_化学制药.html">
+                  <div class="asset-name">化学制药</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/医药_医药商业.html">
+                  <div class="asset-name">医药商业</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>周期资源</h2>
+                <div class="group-meta">区间震荡 | 高位直落 / 缩量反弹 / 放量冲高</div>
+              </div>
+              <div class="group-observation">重点看 能源金属 / 小金属，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/周期资源_小金属.html">
+                  <div class="asset-name">小金属</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/周期资源_有色金属.html">
+                  <div class="asset-name">有色金属</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/周期资源_能源金属.html">
+                  <div class="asset-name">能源金属</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/周期资源_贵金属.html">
+                  <div class="asset-name">贵金属</div>
+                  <div class="asset-meta">区间震荡 | 不追涨</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/周期资源_金属新材料.html">
+                  <div class="asset-name">金属新材料</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>工业</h2>
+                <div class="group-meta">区间震荡 | 缩量反弹 / 高位直落 / 量能正常</div>
+              </div>
+              <div class="group-observation">重点看 化学原料 / 通用设备，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/工业_专用设备.html">
+                  <div class="asset-name">专用设备</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/工业_化学制品.html">
+                  <div class="asset-name">化学制品</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/工业_化学原料.html">
+                  <div class="asset-name">化学原料</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/工业_工程机械.html">
+                  <div class="asset-name">工程机械</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/工业_通用设备.html">
+                  <div class="asset-name">通用设备</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/工业_钢铁行业.html">
+                  <div class="asset-name">钢铁行业</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>建材</h2>
+                <div class="group-meta">区间震荡 | 高位直落 / 缩量反弹</div>
+              </div>
+              <div class="group-observation">重点看 水泥建材 / 玻璃玻纤，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/建材_水泥建材.html">
+                  <div class="asset-name">水泥建材</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/建材_玻璃玻纤.html">
+                  <div class="asset-name">玻璃玻纤</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/建材_装修建材.html">
+                  <div class="asset-name">装修建材</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>消费</h2>
+                <div class="group-meta">趋势转弱 | 高位直落</div>
+              </div>
+              <div class="group-observation">重点看 汽车零部件 / 食品饮料，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/消费_汽车零部件.html">
+                  <div class="asset-name">汽车零部件</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/消费_食品饮料.html">
+                  <div class="asset-name">食品饮料</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>科技</h2>
+                <div class="group-meta">区间震荡 | 高位直落 / 缩量反弹</div>
+              </div>
+              <div class="group-observation">重点看 电子化学品 / 元件，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/科技_IT服务.html">
+                  <div class="asset-name">IT服务</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_元件.html">
+                  <div class="asset-name">元件</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_光学光电子.html">
+                  <div class="asset-name">光学光电子</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_半导体.html">
+                  <div class="asset-name">半导体</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_消费电子.html">
+                  <div class="asset-name">消费电子</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_电子化学品.html">
+                  <div class="asset-name">电子化学品</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_计算机设备.html">
+                  <div class="asset-name">计算机设备</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_软件开发.html">
+                  <div class="asset-name">软件开发</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/科技_通信设备.html">
+                  <div class="asset-name">通信设备</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>能源</h2>
+                <div class="group-meta">区间震荡 | 量能正常 / 放量冲高 / 放量滞涨 / 横盘时间不足 / 缩量反弹 / 高位直落</div>
+              </div>
+              <div class="group-observation">重点看 煤炭行业 / 风电设备，组内当前位置横盘时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/能源_光伏设备.html">
+                  <div class="asset-name">光伏设备</div>
+                  <div class="asset-meta">区间震荡 | 不追涨</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/能源_煤炭行业.html">
+                  <div class="asset-name">煤炭行业</div>
+                  <div class="asset-meta">上涨中继 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/能源_燃气.html">
+                  <div class="asset-name">燃气</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/能源_电力行业.html">
+                  <div class="asset-name">电力行业</div>
+                  <div class="asset-meta">上涨中继 | 不追涨</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/能源_电池.html">
+                  <div class="asset-name">电池</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/能源_电网设备.html">
+                  <div class="asset-name">电网设备</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/能源_石油行业.html">
+                  <div class="asset-name">石油行业</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/能源_风电设备.html">
+                  <div class="asset-name">风电设备</div>
+                  <div class="asset-meta">上涨中继 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>航运</h2>
+                <div class="group-meta">区间震荡 | 缩量反弹</div>
+              </div>
+              <div class="group-observation">重点看 航运港口，组内不少方向回到前期平台，但当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/航运_航运港口.html">
+                  <div class="asset-name">航运港口</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                </a>
+                
+              </div>
+            </section>
+            
+            <section class="group-card">
+              <div class="group-header">
+                <h2>金融</h2>
+                <div class="group-meta">趋势转弱 | 横盘时间不足 / 高位直落</div>
+              </div>
+              <div class="group-observation">重点看 银行 / 保险，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="asset-list">
+                
+                <a class="asset-item" href="./assets/金融_保险.html">
+                  <div class="asset-name">保险</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/金融_证券.html">
+                  <div class="asset-name">证券</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
+                </a>
+                
+                <a class="asset-item" href="./assets/金融_银行.html">
+                  <div class="asset-name">银行</div>
+                  <div class="asset-meta">区间震荡 | 等横盘</div>
+                </a>
+                
+              </div>
+            </section>
+            
+    </div>
+  </div>
+</body>
+</html>
