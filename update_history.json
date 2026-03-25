@@ -1,0 +1,10 @@
+[
+  {
+    "from_version": "2026-03-24-056f2e8e",
+    "to_version": "2026-03-24-657341d2",
+    "updated_at": "2026-03-25 09:41:28",
+    "changes": [
+      "657341d Add homepage version display and local one-click update control."
+    ]
+  }
+]

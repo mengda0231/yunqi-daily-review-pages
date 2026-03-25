@@ -1,10 +1,10 @@
 {
-  "version_label": "2026-03-24-056f2e8e",
+  "version_label": "2026-03-24-657341d2",
   "report_date": "2026-03-24",
-  "built_at": "2026-03-25 01:54:08",
-  "source_commit": "056f2e8e6065797a55a70f50efab109e0137f584",
-  "source_commit_short": "056f2e8e",
-  "source_commit_subject": "Add retry handling for public dashboard push.",
+  "built_at": "2026-03-25 09:41:28",
+  "source_commit": "657341d2cf0e4a412c53edb8eeb13d5d20c15827",
+  "source_commit_short": "657341d2",
+  "source_commit_subject": "Add homepage version display and local one-click update control.",
   "summary_points": [
     "宽基整体偏弱，创业板指 / 科创50 / 北证50处在趋势转弱阶段，先看修复力度，不急着下结论。",
     "能源相对更强，但量价已有冲高特征，当前更适合看确认，不适合追涨。",
