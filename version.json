@@ -1,7 +1,7 @@
 {
-  "version_label": "2026-03-24-657341d2",
-  "report_date": "2026-03-24",
-  "built_at": "2026-03-25 09:41:28",
+  "version_label": "2026-03-25-657341d2",
+  "report_date": "2026-03-25",
+  "built_at": "2026-03-25 09:43:00",
   "source_commit": "657341d2cf0e4a412c53edb8eeb13d5d20c15827",
   "source_commit_short": "657341d2",
   "source_commit_subject": "Add homepage version display and local one-click update control.",
