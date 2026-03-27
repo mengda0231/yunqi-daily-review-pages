@@ -1,10 +1,9 @@
 {
-  "version_label": "2026-03-25 22:19",
-  "report_date": "2026-03-25",
-  "built_at": "2026-03-25 22:19:08",
-  "summary_points": [
-    "宽基整体偏弱，上证指数 / 科创50 / 北证50处在趋势转弱阶段，先看修复力度，不急着下结论。",
-    "能源已有关键位失而复得迹象，后面重点看回踩后能否站稳，再决定是否进一步转强。",
-    "军工 / 金融 / 消费偏弱，现阶段先按观察处理，核心看是否能回到关键位上方。"
-  ]
+  "version_label": "2026-03-27-2287117d",
+  "report_date": "2026-03-27",
+  "built_at": "2026-03-27 16:56:48",
+  "source_commit": "2287117d1edc88f7b50e963ce232e78cb365cd2a",
+  "source_commit_short": "2287117d",
+  "source_commit_subject": "Improve background scheduled dashboard publishing.",
+  "summary_points": []
 }
