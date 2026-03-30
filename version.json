@@ -1,13 +1,13 @@
 {
-  "version_label": "2026-03-27-2d9a6be1",
-  "report_date": "2026-03-27",
-  "built_at": "2026-03-30 09:18:39",
-  "source_commit": "2d9a6be15cc9a396e6ef5dc7edf8014e2d691a80",
-  "source_commit_short": "2d9a6be1",
-  "source_commit_subject": "backup: local noon snapshot 2026-03-30 09:11:51",
+  "version_label": "2026-03-30-9c32afdf",
+  "report_date": "2026-03-30",
+  "built_at": "2026-03-30 16:02:05",
+  "source_commit": "9c32afdf270428d072918f989fe352c5a2eefcf8",
+  "source_commit_short": "9c32afdf",
+  "source_commit_subject": "backup: local noon snapshot 2026-03-30 12:00:02",
   "summary_points": [
-    "宽基整体仍偏弱，当前更像修复段，不是反转段；上证指数、深证成指、科创50先看能否结束弱整理。",
-    "科技是相对强项，但也是最容易在放量冲高后出现分歧的方向，结论只有一个：看确认，不追涨。",
-    "大多数核心板块仍卡在“回到平台附近但横住不够”的阶段，明天真正要看的不是涨跌幅，而是能否重新站回关键位并把横盘时间做出来。"
+    "宽基主结构偏弱没有变，当前只能按“跌后修复”理解，不能按“新升势启动”理解。",
+    "科技有相对强度，但现有证据更支持“看确认、不追涨”，不支持直接扩大战果预期。",
+    "大多数行业还没走出弱整理，明天市场真正要回答的问题，是谁能回到关键位上方并稳住，而不是谁先拉出一根反弹K线。"
   ]
 }
