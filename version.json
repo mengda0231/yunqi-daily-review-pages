@@ -1,13 +1,13 @@
 {
-  "version_label": "2026-03-30-9c32afdf",
-  "report_date": "2026-03-30",
-  "built_at": "2026-03-30 16:02:05",
-  "source_commit": "9c32afdf270428d072918f989fe352c5a2eefcf8",
-  "source_commit_short": "9c32afdf",
-  "source_commit_subject": "backup: local noon snapshot 2026-03-30 12:00:02",
+  "version_label": "2026-03-31-ef3ece92",
+  "report_date": "2026-03-31",
+  "built_at": "2026-04-01 16:11:53",
+  "source_commit": "ef3ece92cc7563e98f6767705773e4ac1d143dd1",
+  "source_commit_short": "ef3ece92",
+  "source_commit_subject": "backup: local noon snapshot 2026-04-01 12:00:03",
   "summary_points": [
-    "宽基主结构偏弱没有变，当前只能按“跌后修复”理解，不能按“新升势启动”理解。",
-    "科技有相对强度，但现有证据更支持“看确认、不追涨”，不支持直接扩大战果预期。",
-    "大多数行业还没走出弱整理，明天市场真正要回答的问题，是谁能回到关键位上方并稳住，而不是谁先拉出一根反弹K线。"
+    "宽基整体仍是偏弱整理，眼下先看关键位附近能否横住并形成修复，不能把当前位置直接当成转强起点。",
+    "金融属于压力位下补时间的候选方向，短线不急着下走弱结论，后续重点看银行、证券是否继续收敛并完成确认。",
+    "科技、军工、工业等方向共同问题是“横盘时间不足”，医药则额外叠加放量滞涨信号，因此主线策略仍是观察优先，医药明确不追涨。"
   ]
 }
