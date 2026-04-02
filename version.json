@@ -1,13 +1,13 @@
 {
-  "version_label": "2026-03-31-ef3ece92",
-  "report_date": "2026-03-31",
-  "built_at": "2026-04-01 16:11:53",
-  "source_commit": "ef3ece92cc7563e98f6767705773e4ac1d143dd1",
-  "source_commit_short": "ef3ece92",
-  "source_commit_subject": "backup: local noon snapshot 2026-04-01 12:00:03",
+  "version_label": "2026-04-01-adb52027",
+  "report_date": "2026-04-01",
+  "built_at": "2026-04-02 16:01:56",
+  "source_commit": "adb52027ac2d29f3c1fde12f9e18dd9ddfa777b5",
+  "source_commit_short": "adb52027",
+  "source_commit_subject": "backup: local noon snapshot 2026-04-02 12:00:03",
   "summary_points": [
-    "宽基整体仍是偏弱整理，眼下先看关键位附近能否横住并形成修复，不能把当前位置直接当成转强起点。",
-    "金融属于压力位下补时间的候选方向，短线不急着下走弱结论，后续重点看银行、证券是否继续收敛并完成确认。",
-    "科技、军工、工业等方向共同问题是“横盘时间不足”，医药则额外叠加放量滞涨信号，因此主线策略仍是观察优先，医药明确不追涨。"
+    "宽基整体偏弱，上证指数 / 深证成指 / 创业板指处在趋势转弱阶段，先看修复力度，不急着下结论。",
+    "金融更像关键位下蓄势，当前先看补时间和确认，不宜把眼前整理直接当成走弱。",
+    "科技 / 军工 / 工业偏弱，现阶段先按观察处理，核心看是否能回到关键位上方。"
   ]
 }
