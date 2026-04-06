@@ -8,6 +8,9 @@
   "stable_trigger_group_count": 31,
   "trigger_group_count": 217,
   "panorama_group_count": 55,
+  "ta_gradecard_verdict": "warn",
+  "geometry_confirmed_count": 0,
+  "geometry_inferred_count": 7,
   "stable_trigger_groups": [
     {
       "trigger_label": "上轨",
