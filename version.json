@@ -1,10 +1,10 @@
 {
-  "version_label": "2026-04-01-adb52027",
-  "report_date": "2026-04-01",
-  "built_at": "2026-04-02 16:01:56",
-  "source_commit": "adb52027ac2d29f3c1fde12f9e18dd9ddfa777b5",
-  "source_commit_short": "adb52027",
-  "source_commit_subject": "backup: local noon snapshot 2026-04-02 12:00:03",
+  "version_label": "2026-04-03-e01fca14",
+  "report_date": "2026-04-03",
+  "built_at": "2026-04-06 19:51:04",
+  "source_commit": "e01fca14ff37b9113c974af52b22ced441a83028",
+  "source_commit_short": "e01fca14",
+  "source_commit_subject": "backup: local noon snapshot 2026-04-04 13:58:46",
   "summary_points": [
     "宽基整体偏弱，上证指数 / 深证成指 / 创业板指处在趋势转弱阶段，先看修复力度，不急着下结论。",
     "金融更像关键位下蓄势，当前先看补时间和确认，不宜把眼前整理直接当成走弱。",

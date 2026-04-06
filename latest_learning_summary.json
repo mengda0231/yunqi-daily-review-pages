@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-04-06T14:21:08",
+  "batch_count": 4,
+  "pass_count": 4,
+  "selected_video_count": 20,
+  "trigger_item_count": 452,
+  "panorama_item_count": 122,
+  "stable_trigger_group_count": 31,
+  "trigger_group_count": 217,
+  "panorama_group_count": 55,
+  "stable_trigger_groups": [
+    {
+      "trigger_label": "上轨",
+      "chart_relation": "通道运行",
+      "source_video_count": 10,
+      "batch_count": 4,
+      "host_anchor_excerpt": "上证 / 半导体 / 大盘 / 工程机械 等"
+    },
+    {
+      "trigger_label": "通道",
+      "chart_relation": "通道运行",
+      "source_video_count": 10,
+      "batch_count": 4,
+      "host_anchor_excerpt": "上证 / 化学 / 半导体 / 大盘 等"
+    },
+    {
+      "trigger_label": "通道上轨",
+      "chart_relation": "通道运行",
+      "source_video_count": 10,
+      "batch_count": 4,
+      "host_anchor_excerpt": "上证 / 半导体 / 大盘 / 工程机械 等"
+    },
+    {
+      "trigger_label": "向上突破",
+      "chart_relation": "向上突破",
+      "source_video_count": 8,
+      "batch_count": 4,
+      "host_anchor_excerpt": "创业板 / 大盘 / 工业 / 航空 等"
+    },
+    {
+      "trigger_label": "箱体",
+      "chart_relation": "箱体震荡",
+      "source_video_count": 8,
+      "batch_count": 4,
+      "host_anchor_excerpt": "中药 / 化学制药 / 医疗 / 大盘 等"
+    },
+    {
+      "trigger_label": "头肩底",
+      "chart_relation": "头肩底确认",
+      "source_video_count": 8,
+      "batch_count": 3,
+      "host_anchor_excerpt": "保险 / 医疗 / 煤炭 / 航空 等"
+    },
+    {
+      "trigger_label": "停顿",
+      "chart_relation": "横盘整理",
+      "source_video_count": 7,
+      "batch_count": 4,
+      "host_anchor_excerpt": "上证 / 光学光电子 / 化学 / 煤炭 等"
+    },
+    {
+      "trigger_label": "破位",
+      "chart_relation": "破位转弱",
+      "source_video_count": 7,
+      "batch_count": 4,
+      "host_anchor_excerpt": "光学光电子 / 化学 / 化学制药 / 半导体 等"
+    }
+  ],
+  "top_panorama_groups": [
+    {
+      "index_or_market_label": "大盘",
+      "trend_judgment": "待验证",
+      "source_video_count": 9,
+      "structure_phrase_excerpt": "关键位附近徘徊 / 大盘结构观察 / 大箱体突破后的结构延续"
+    },
+    {
+      "index_or_market_label": "能源",
+      "trend_judgment": "看涨",
+      "source_video_count": 7,
+      "structure_phrase_excerpt": "关键位附近徘徊 / 横盘整理 / 结构待补充 等"
+    },
+    {
+      "index_or_market_label": "军工",
+      "trend_judgment": "看涨",
+      "source_video_count": 6,
+      "structure_phrase_excerpt": "横盘整理 / 结构待补充"
+    },
+    {
+      "index_or_market_label": "工业",
+      "trend_judgment": "看涨",
+      "source_video_count": 6,
+      "structure_phrase_excerpt": "箱体震荡 / 结构待补充 / 通道边界约束"
+    },
+    {
+      "index_or_market_label": "大盘",
+      "trend_judgment": "看涨",
+      "source_video_count": 5,
+      "structure_phrase_excerpt": "上升通道内运行 / 大盘结构观察"
+    },
+    {
+      "index_or_market_label": "消费",
+      "trend_judgment": "看涨",
+      "source_video_count": 5,
+      "structure_phrase_excerpt": "结构待补充 / 通道边界约束"
+    }
+  ],
+  "mixed_context_note": "mixed_context 候选 34 条，其中 panorama-rich 12 条，但标题偏港美风格的样本仍有 31 条，当前继续以 A 股精选批次学习更稳妥。",
+  "mixed_context_sample_titles": [
+    "7578682709753498914港股持续盘整，恒科触底了吗？",
+    "7581280573109341480港股稳转强，证券板块大涨，后市怎么看？",
+    "7569776265549450539港股全面大涨，芯片飙升6.2%，后市怎么走？"
+  ],
+  "selection_strategy_note": "当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。"
+}

@@ -16,6 +16,16 @@
     .summary-card ul { margin:0; padding-left:20px; color:#444; line-height:1.8; }
     .summary-date { display:inline-block; margin-top:10px; padding:4px 10px; border-radius:999px; background:#eef3ff; color:#315efb; font-size:13px; }
     .version-chip { display:inline-block; margin-top:10px; margin-left:10px; padding:4px 10px; border-radius:999px; background:#f2f5fb; color:#4b5563; font-size:13px; }
+    .learning-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:20px; }
+    .learning-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .learning-card h2 { margin:0 0 10px 0; font-size:20px; }
+    .learning-card ul { margin:0; padding-left:20px; color:#444; line-height:1.8; }
+    .learning-meta { color:#6b7280; font-size:13px; line-height:1.7; margin-bottom:12px; }
+    .learning-note { margin-top:12px; color:#4b5563; line-height:1.8; }
+    .metric-grid { display:grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap:12px; margin:12px 0 4px 0; }
+    .metric-box { background:#f8fbff; border:1px solid #e7eefc; border-radius:12px; padding:14px; }
+    .metric-value { font-size:24px; font-weight:700; color:#1f2937; }
+    .metric-label { margin-top:4px; color:#6b7280; font-size:13px; line-height:1.5; }
     .admin-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:20px; }
     .admin-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
     .admin-card h2 { margin:0 0 12px 0; font-size:20px; }
@@ -46,18 +56,18 @@
     <div class="hero">
       <h1>云起日复盘看板</h1>
       <p>按“先结论，再看宽基与板块细节”的方式查看。点击任一标的即可进入详情页，查看对应日K图、周K图、辅助线和复盘结论。</p>
-      <div class="summary-date">复盘日期：2026-04-01</div>
-      <div class="version-chip" id="current-version">版本：2026-04-01-adb52027</div>
+      <div class="summary-date">复盘日期：2026-04-03</div>
+      <div class="version-chip" id="current-version">版本：2026-04-03-e01fca14</div>
     </div>
     <div class="admin-grid">
       <section class="admin-card">
         <h2>版本信息</h2>
         <div class="admin-meta">
-          当前版本：<strong>2026-04-01-adb52027</strong><br>
-          复盘日期：2026-04-01<br>
-          构建时间：2026-04-02 16:01:56<br>
-          来源提交：adb52027<br>
-          提交说明：backup: local noon snapshot 2026-04-02 12:00:03<br>
+          当前版本：<strong>2026-04-03-e01fca14</strong><br>
+          复盘日期：2026-04-03<br>
+          构建时间：2026-04-06 19:51:04<br>
+          来源提交：e01fca14<br>
+          提交说明：backup: local noon snapshot 2026-04-04 13:58:46<br>
           发布方式：本地策略迭代后，按计划任务自动生成并推送到 GitHub Pages
         </div>
         <button class="admin-btn" id="update-button" type="button" disabled>更新由定时任务触发</button>
@@ -66,8 +76,8 @@
         <h2>最近更新日志</h2>
         
           <div class="history-item">
-            <div class="history-title">2026-03-31 -> 2026-04-01-adb52027</div>
-            <div class="history-meta">2026-04-02 16:01:56</div>
+            <div class="history-title">2026-04-01 -> 2026-04-03-e01fca14</div>
+            <div class="history-meta">2026-04-06 19:51:04</div>
             <ul><li>宽基整体偏弱，上证指数 / 深证成指 / 创业板指处在趋势转弱阶段，先看修复力度，不急着下结论。</li><li>金融更像关键位下蓄势，当前先看补时间和确认，不宜把眼前整理直接当成走弱。</li><li>科技 / 军工 / 工业偏弱，现阶段先按观察处理，核心看是否能回到关键位上方。</li></ul>
           </div>
         
@@ -87,14 +97,52 @@
         </ul>
       </section>
     </div>
+    
+    <div class="learning-grid">
+      <section class="learning-card learning-overview-card">
+        <h2>最新学习成果</h2>
+        <div class="learning-meta">来源：yunqi-transcript-corpus-cursor 跨批次学习汇总 | 更新时间：2026-04-06T14:21:08</div>
+        <div class="metric-grid">
+          <div class="metric-box">
+            <div class="metric-value">4/4</div>
+            <div class="metric-label">学习批次通过</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-value">20</div>
+            <div class="metric-label">已学习视频数</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-value">31</div>
+            <div class="metric-label">稳定局部形态规则</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-value">452/122</div>
+            <div class="metric-label">局部触发 / 全景趋势项</div>
+          </div>
+        </div>
+        <div class="learning-note"><strong>当前主线：</strong>当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。</div>
+        <div class="learning-note"><strong>精选策略：</strong>mixed_context 候选 34 条，其中 panorama-rich 12 条，但标题偏港美风格的样本仍有 31 条，当前继续以 A 股精选批次学习更稳妥。</div>
+        <div class="learning-note"><strong>mixed-context 样例：</strong></div>
+        <ul><li>7578682709753498914港股持续盘整，恒科触底了吗？</li><li>7581280573109341480港股稳转强，证券板块大涨，后市怎么看？</li><li>7569776265549450539港股全面大涨，芯片飙升6.2%，后市怎么走？</li></ul>
+      </section>
+      <section class="learning-card">
+        <h2>稳定局部形态</h2>
+        <ul><li>上轨 -&gt; 通道运行 （10条视频 / 4个批次；常见锚点：上证 / 半导体 / 大盘 / 工程机械 等）</li><li>通道 -&gt; 通道运行 （10条视频 / 4个批次；常见锚点：上证 / 化学 / 半导体 / 大盘 等）</li><li>通道上轨 -&gt; 通道运行 （10条视频 / 4个批次；常见锚点：上证 / 半导体 / 大盘 / 工程机械 等）</li><li>向上突破 -&gt; 向上突破 （8条视频 / 4个批次；常见锚点：创业板 / 大盘 / 工业 / 航空 等）</li><li>箱体 -&gt; 箱体震荡 （8条视频 / 4个批次；常见锚点：中药 / 化学制药 / 医疗 / 大盘 等）</li><li>头肩底 -&gt; 头肩底确认 （8条视频 / 3个批次；常见锚点：保险 / 医疗 / 煤炭 / 航空 等）</li><li>停顿 -&gt; 横盘整理 （7条视频 / 4个批次；常见锚点：上证 / 光学光电子 / 化学 / 煤炭 等）</li><li>破位 -&gt; 破位转弱 （7条视频 / 4个批次；常见锚点：光学光电子 / 化学 / 化学制药 / 半导体 等）</li></ul>
+      </section>
+      <section class="learning-card">
+        <h2>全景趋势锚点</h2>
+        <ul><li>大盘：待验证 （9条视频；结构词：关键位附近徘徊 / 大盘结构观察 / 大箱体突破后的结构延续）</li><li>能源：看涨 （7条视频；结构词：关键位附近徘徊 / 横盘整理 / 结构待补充 等）</li><li>军工：看涨 （6条视频；结构词：横盘整理 / 结构待补充）</li><li>工业：看涨 （6条视频；结构词：箱体震荡 / 结构待补充 / 通道边界约束）</li><li>大盘：看涨 （5条视频；结构词：上升通道内运行 / 大盘结构观察）</li><li>消费：看涨 （5条视频；结构词：结构待补充 / 通道边界约束）</li></ul>
+      </section>
+    </div>
+    
     <div class="group-grid">
       
             <section class="group-card">
               <div class="group-header">
                 <h2>军工</h2>
-                <div class="group-meta">偏弱整理 · 趋势转弱 | 缩量反弹 / 高位直落</div>
+                <div class="group-meta">高位直落后弱整理 · 趋势转弱 | 高位直落</div>
               </div>
-              <div class="group-observation">重点看 船舶制造 / 航天航空，组内当前位置横盘一般</div>
+              <div class="group-observation">重点看 船舶制造 / 航天航空，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/军工_航天航空.html">
@@ -113,14 +161,14 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>医药</h2>
-                <div class="group-meta">中继待确认 · 上涨中继 | 爆量 / 放量冲高 / 横盘时间不足 / 套牢盘重 / 突破未确认</div>
+                <div class="group-meta">宽幅震荡 · 区间震荡 | 爆量 / 放量滞涨 / 套牢盘重 / 突破未确认 / 横盘时间不足</div>
               </div>
-              <div class="group-observation">重点看 医药商业 / 中药，组内不少方向回到前期平台，但当前位置横住时间不足</div>
+              <div class="group-observation">重点看 医药商业 / 化学制药，组内不少方向回到前期平台，但当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/医药_中药.html">
                   <div class="asset-name">中药</div>
-                  <div class="asset-meta">上涨中继 | 不追涨</div>
+                  <div class="asset-meta">趋势转弱 | 等横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/医药_化学制药.html">
@@ -130,7 +178,7 @@
                 
                 <a class="asset-item" href="./assets/医药_医药商业.html">
                   <div class="asset-name">医药商业</div>
-                  <div class="asset-meta">上涨中继 | 不追涨</div>
+                  <div class="asset-meta">区间震荡 | 不追涨</div>
                 </a>
                 
               </div>
@@ -139,14 +187,14 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>周期资源</h2>
-                <div class="group-meta">高位直落后弱整理 · 区间震荡 | 量能正常 / 高位直落 / 放量冲高 / 缩量反弹</div>
+                <div class="group-meta">高位直落后弱整理 · 趋势转弱 | 量能正常 / 高位直落</div>
               </div>
-              <div class="group-observation">重点看 能源金属 / 小金属，组内多为高位直落，当前位置尚未横住</div>
+              <div class="group-observation">重点看 能源金属 / 金属新材料，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/周期资源_小金属.html">
                   <div class="asset-name">小金属</div>
-                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/周期资源_有色金属.html">
@@ -161,7 +209,7 @@
                 
                 <a class="asset-item" href="./assets/周期资源_贵金属.html">
                   <div class="asset-name">贵金属</div>
-                  <div class="asset-meta">区间震荡 | 不追涨</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/周期资源_金属新材料.html">
@@ -175,9 +223,9 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>工业</h2>
-                <div class="group-meta">偏弱整理 · 趋势转弱 | 缩量反弹 / 高位直落</div>
+                <div class="group-meta">高位直落后弱整理 · 趋势转弱 | 高位直落 / 跌破未确认</div>
               </div>
-              <div class="group-observation">重点看 化学原料 / 通用设备，组内当前位置横盘一般</div>
+              <div class="group-observation">重点看 化学原料 / 通用设备，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/工业_专用设备.html">
@@ -216,14 +264,14 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>建材</h2>
-                <div class="group-meta">跌后弱整理 · 区间震荡 | 缩量反弹 / 高位直落</div>
+                <div class="group-meta">高位直落后弱整理 · 趋势转弱 | 高位直落 / 量能正常</div>
               </div>
-              <div class="group-observation">重点看 装修建材 / 水泥建材，组内当前位置横盘一般</div>
+              <div class="group-observation">重点看 玻璃玻纤 / 装修建材，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/建材_水泥建材.html">
                   <div class="asset-name">水泥建材</div>
-                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/建材_玻璃玻纤.html">
@@ -233,7 +281,7 @@
                 
                 <a class="asset-item" href="./assets/建材_装修建材.html">
                   <div class="asset-name">装修建材</div>
-                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
                 </a>
                 
               </div>
@@ -242,9 +290,9 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>消费</h2>
-                <div class="group-meta">收敛整理 · 趋势转弱 | 量能正常 / 高位直落</div>
+                <div class="group-meta">高位直落后弱整理 · 趋势转弱 | 高位直落</div>
               </div>
-              <div class="group-observation">重点看 食品饮料 / 汽车零部件，组内当前位置更像收敛整理，重点看后续是否继续压缩并完成确认</div>
+              <div class="group-observation">重点看 汽车零部件 / 食品饮料，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/消费_汽车零部件.html">
@@ -263,7 +311,7 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>科技</h2>
-                <div class="group-meta">高位直落后弱整理 · 趋势转弱 | 缩量反弹 / 高位直落 / 量能正常</div>
+                <div class="group-meta">高位直落后弱整理 · 趋势转弱 | 量能正常 / 高位直落 / 跌破未确认</div>
               </div>
               <div class="group-observation">重点看 电子化学品 / 元件，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
               <div class="asset-list">
@@ -280,7 +328,7 @@
                 
                 <a class="asset-item" href="./assets/科技_光学光电子.html">
                   <div class="asset-name">光学光电子</div>
-                  <div class="asset-meta">区间震荡 | 继续观察</div>
+                  <div class="asset-meta">趋势转弱 | 继续观察</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/科技_半导体.html">
@@ -319,14 +367,14 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>能源</h2>
-                <div class="group-meta">高位直落后弱整理 · 区间震荡 | 缩量反弹 / 高位直落 / 跌破未确认 / 量能正常 / 横盘时间不足</div>
+                <div class="group-meta">高位直落后弱整理 · 区间震荡 | 高位直落 / 跌破未确认</div>
               </div>
-              <div class="group-observation">重点看 石油行业 / 电网设备，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="group-observation">重点看 光伏设备 / 电网设备，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/能源_光伏设备.html">
                   <div class="asset-name">光伏设备</div>
-                  <div class="asset-meta">区间震荡 | 回踩确认后再看</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/能源_煤炭行业.html">
@@ -336,7 +384,7 @@
                 
                 <a class="asset-item" href="./assets/能源_燃气.html">
                   <div class="asset-name">燃气</div>
-                  <div class="asset-meta">区间震荡 | 等横盘</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/能源_电力行业.html">
@@ -370,7 +418,7 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>航运</h2>
-                <div class="group-meta">收敛整理 · 区间震荡 | 缩量反弹</div>
+                <div class="group-meta">收敛整理 · 区间震荡 | 量能正常</div>
               </div>
               <div class="group-observation">重点看 航运港口，组内当前位置更像收敛整理，重点看后续是否继续压缩并完成确认</div>
               <div class="asset-list">
@@ -386,7 +434,7 @@
             <section class="group-card">
               <div class="group-header">
                 <h2>金融</h2>
-                <div class="group-meta">收敛整理 · 趋势转弱 | 量能正常 / 缩量反弹 / 高位直落</div>
+                <div class="group-meta">收敛整理 · 趋势转弱 | 量能正常 / 高位直落 / 跌破未确认</div>
               </div>
               <div class="group-observation">重点看 银行 / 证券，组内当前位置更像收敛整理，重点看后续是否继续压缩并完成确认</div>
               <div class="asset-list">
@@ -403,7 +451,7 @@
                 
                 <a class="asset-item" href="./assets/金融_银行.html">
                   <div class="asset-name">银行</div>
-                  <div class="asset-meta">上涨中继 | 等突破确认</div>
+                  <div class="asset-meta">区间震荡 | 继续观察</div>
                 </a>
                 
               </div>
