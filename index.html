@@ -5,32 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>云起日复盘看板</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#f4f6fb; color:#222; margin:0; }
-    .page { max-width: 1400px; margin: 0 auto; padding: 24px; }
-    .hero { background:#fff; border-radius:16px; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,0.06); margin-bottom:20px; }
-    .hero h1 { margin:0 0 10px 0; }
-    .hero p { margin:0; color:#555; line-height:1.7; }
+    :root {
+      --bg: #f3f6fb;
+      --panel: #ffffff;
+      --panel-soft: #f7faff;
+      --border: #dbe4f0;
+      --text: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #2f5bda;
+      --accent-soft: #eaf1ff;
+      --shadow: 0 12px 30px rgba(28, 49, 94, 0.08);
+      --radius-xl: 20px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+    }
+    body { font-family: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif; background:linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%); color:var(--text); margin:0; }
+    .page { max-width: 1440px; margin: 0 auto; padding: 24px; }
+    .hero { background:linear-gradient(145deg, #ffffff 0%, #f6f9ff 100%); border:1px solid var(--border); border-radius:var(--radius-xl); padding:26px; box-shadow:var(--shadow); margin-bottom:20px; }
+    .hero h1 { margin:0 0 10px 0; font-size:34px; }
+    .hero p { margin:0; color:var(--muted); line-height:1.8; max-width:920px; }
     .summary-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:20px; }
-    .summary-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .summary-card { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px; box-shadow:var(--shadow); }
     .summary-card h2 { margin:0 0 10px 0; font-size:20px; }
-    .summary-card ul { margin:0; padding-left:20px; color:#444; line-height:1.8; }
-    .summary-date { display:inline-block; margin-top:10px; padding:4px 10px; border-radius:999px; background:#eef3ff; color:#315efb; font-size:13px; }
-    .version-chip { display:inline-block; margin-top:10px; margin-left:10px; padding:4px 10px; border-radius:999px; background:#f2f5fb; color:#4b5563; font-size:13px; }
+    .summary-card ul { margin:0; padding-left:20px; color:#425466; line-height:1.8; }
+    .summary-date { display:inline-block; margin-top:14px; padding:5px 12px; border-radius:999px; background:var(--accent-soft); color:var(--accent); font-size:13px; }
+    .version-chip { display:inline-block; margin-top:14px; margin-left:10px; padding:5px 12px; border-radius:999px; background:#eef2f8; color:#4b5563; font-size:13px; }
+    .layer-section { margin-bottom:12px; }
     .learning-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:20px; }
-    .learning-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .learning-card { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px; box-shadow:var(--shadow); }
     .learning-card h2 { margin:0 0 10px 0; font-size:20px; }
-    .learning-card ul { margin:0; padding-left:20px; color:#444; line-height:1.8; }
+    .learning-card ul { margin:0; padding-left:20px; color:#425466; line-height:1.8; }
     .learning-meta { color:#6b7280; font-size:13px; line-height:1.7; margin-bottom:12px; }
     .learning-note { margin-top:12px; color:#4b5563; line-height:1.8; }
     .metric-grid { display:grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap:12px; margin:12px 0 4px 0; }
-    .metric-box { background:#f8fbff; border:1px solid #e7eefc; border-radius:12px; padding:14px; }
+    .metric-box { background:var(--panel-soft); border:1px solid #e7eefc; border-radius:var(--radius-md); padding:14px; }
     .metric-value { font-size:24px; font-weight:700; color:#1f2937; }
     .metric-label { margin-top:4px; color:#6b7280; font-size:13px; line-height:1.5; }
-    .admin-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:20px; }
-    .admin-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .admin-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-top:16px; }
+    .admin-card { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); padding:18px; box-shadow:var(--shadow); }
     .admin-card h2 { margin:0 0 12px 0; font-size:20px; }
     .admin-meta { color:#555; line-height:1.8; font-size:14px; }
-    .admin-btn { margin-top:14px; padding:10px 16px; border:none; border-radius:10px; background:#315efb; color:#fff; font-size:14px; cursor:pointer; }
+    .admin-btn { margin-top:14px; padding:10px 16px; border:none; border-radius:10px; background:var(--accent); color:#fff; font-size:14px; cursor:pointer; }
     .admin-btn[disabled] { background:#9db0f5; cursor:not-allowed; }
     .admin-status { margin-top:12px; white-space:pre-wrap; color:#444; line-height:1.8; font-size:14px; }
     .history-item { padding:12px 0; border-top:1px solid #eef2f7; }
@@ -43,63 +58,57 @@
     .section-heading h2 { margin:0; font-size:24px; }
     .section-heading-note { color:#6b7280; font-size:14px; }
     .index-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; }
-    .index-card { display:block; text-decoration:none; color:#1f2937; background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%); border:1px solid #e2e8f4; border-radius:16px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .index-card { display:block; text-decoration:none; color:#1f2937; background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%); border:1px solid #e2e8f4; border-radius:16px; padding:18px; box-shadow:var(--shadow); }
     .index-card:hover { border-color:#bfd0f7; background:#eef4ff; }
     .index-card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:12px; }
     .index-card-title { font-size:20px; font-weight:700; }
     .index-card-subtitle { color:#5f6b7a; font-size:13px; margin-top:4px; }
-    .index-chip { display:inline-block; padding:4px 10px; border-radius:999px; background:#e8eefc; color:#315efb; font-size:12px; white-space:nowrap; }
+    .index-chip { display:inline-block; padding:4px 10px; border-radius:999px; background:#e8eefc; color:var(--accent); font-size:12px; white-space:nowrap; }
     .index-card-line { margin-top:8px; color:#425466; line-height:1.7; font-size:14px; }
     .group-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; }
-    .group-card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .group-card { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); padding:18px; box-shadow:var(--shadow); }
     .group-header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
     .group-header h2 { margin:0; font-size:20px; }
-    .group-meta { color:#315efb; font-size:13px; }
-    .group-observation { margin-top:10px; color:#555; line-height:1.7; }
+    .group-meta { color:var(--accent); font-size:13px; margin-top:4px; }
+    .group-chip { display:inline-block; padding:5px 10px; border-radius:999px; background:var(--accent-soft); color:var(--accent); font-size:12px; white-space:nowrap; }
+    .group-context { margin-top:10px; color:#6b7280; font-size:13px; }
+    .group-observation { margin-top:10px; color:#44515f; line-height:1.7; }
     .asset-list { margin-top:14px; display:flex; flex-direction:column; gap:10px; }
-    .asset-item { display:block; padding:12px 14px; background:#f8faff; border-radius:10px; text-decoration:none; color:#222; border:1px solid #e7ecf5; }
+    .asset-item { display:block; padding:12px 14px; background:var(--panel-soft); border-radius:10px; text-decoration:none; color:#222; border:1px solid #e7ecf5; }
     .asset-item:hover { background:#eef4ff; border-color:#c9dafc; }
     .asset-name { font-weight:600; }
     .asset-meta { margin-top:4px; color:#666; font-size:13px; }
+    .admin-section { margin-top:20px; }
+    .admin-details { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:16px 18px; }
+    .admin-details summary { cursor:pointer; font-weight:700; color:#1f2937; }
+    .learning-evidence-card details { margin-top:6px; }
+    .learning-evidence-card summary { cursor:pointer; color:var(--accent); font-weight:600; }
+    @media (max-width: 900px) {
+      .page { padding: 20px 16px; }
+      .hero h1 { font-size: 28px; }
+      .summary-grid, .learning-grid, .group-grid, .index-grid, .admin-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <div class="hero">
       <h1>云起日复盘看板</h1>
-      <p>按“先结论，再看宽基与板块细节”的方式查看。点击任一标的即可进入详情页，查看对应日K图、周K图、辅助线和复盘结论。</p>
-      <div class="summary-date">复盘日期：2026-04-08</div>
-      <div class="version-chip" id="current-version">版本：2026-04-08-c1709739</div>
-    </div>
-    <div class="admin-grid">
-      <section class="admin-card">
-        <h2>版本信息</h2>
-        <div class="admin-meta">
-          当前版本：<strong>2026-04-08-c1709739</strong><br>
-          复盘日期：2026-04-08<br>
-          构建时间：2026-04-09 12:21:13<br>
-          来源提交：c1709739<br>
-          提交说明：backup: local noon snapshot 2026-04-09 12:00:48<br>
-          发布方式：本地策略迭代后，按计划任务自动生成并推送到 GitHub Pages
-        </div>
-        <button class="admin-btn" id="update-button" type="button" disabled>更新由定时任务触发</button>
-      </section>
-      <section class="admin-card">
-        <h2>最近更新日志</h2>
-        <div class="history-item"><div class="history-title">暂无更新记录</div></div>
-      </section>
+      <p>首页先看当天主判断、关键观察位、几大指数和组别动作。更深的学习统计、证据层和系统信息都下沉处理，方便先判断，再研究。</p>
+      <div class="summary-date">复盘日期：2026-04-09</div>
+      <div class="version-chip" id="current-version">版本：2026-04-09-c1709739</div>
     </div>
     <div class="summary-grid">
       <section class="summary-card">
         <h2>当天主要复盘结论</h2>
         <ul>
-          <li>宽基周线更像大箱体震荡，上证指数 / 创业板指当前重点不是猜方向，而是看箱体边界是否被真正确认。</li><li>宽基里 深证成指 / 创业板指 / 科创50 已出现假跌破或关键位收回迹象，短线先看修复能否延续，不急着直接下弱势结论。</li><li>结合最新学习样本，科技更贴近已学会的“向上突破-&gt;向上突破 / 横盘-&gt;上涨中继 / 横盘-&gt;支撑位附近停顿”型结构，当前重点仍是组内关键支撑附近仍在确认破位链是否形成，先不急着按止跌处理。</li>
+          <li>宽基以区间震荡为主，深证成指 / 科创50仍在箱体内运行，当前更像整理而不是明确单边。</li><li>结合最新学习样本，科技更贴近已学会的“向上突破-&gt;向上突破 / 横盘-&gt;上涨中继 / 横盘-&gt;支撑位附近停顿”型结构，当前重点仍是组内关键支撑附近仍在确认破位链是否形成，先不急着按止跌处理。</li><li>基建更像关键位下蓄势，当前先看补时间和确认，不宜把眼前整理直接当成走弱。</li>
         </ul>
       </section>
       <section class="summary-card">
         <h2>明日重点观察位</h2>
         <ul>
-          <li>上证指数：支撑位 3805.26；压力位 3955.94；日线箱体 3794.68-4141.65；周线箱体 3420.11-4197.23；上升趋势线 3816.58→4119.97；当前突破未确认；周线大箱体震荡，日线顺周线突破，短线偏延续，当前位置顶着压力位震荡；当前位置仍在修复观察阶段，横住时间不够，不能直接上调成突破；失效看 收盘有效跌破 3805.26；有效跌破 3794.68 后无法收回；颈线 3794.68 被反向重新收回或跌破失效</li><li>深证成指：支撑位 13880.05；压力位 14531.97；日线箱体 13169.26-14531.03；上升趋势线 12881.57→13208.49；当前破位后收回；周线趋势待确认，日线待确认，短线偏观察，当前位置靠近箱体下沿；前面失守的关键位 13880.05 暂时收回，但还没有形成 follow-through confirmation；失效看 收盘有效跌破 13880.05；有效跌破 13169.26 后无法收回；颈线 13169.26 被反向重新收回或跌破失效</li><li>科技：破位待确认；周线底部构造中，日线顺周线突破，短线偏延续；组内关键支撑附近仍在确认破位链是否形成，先不急着按止跌处理；重点看 电子化学品 / 元件，组内不少方向回到前期平台，但当前位置横住时间不足；失效看 若组内代表方向持续失守 4901.39 一带，当前结构确认失败；只有有效站稳 5667.03 之上，向上修复才算真正确认；学习锚点 向上突破-&gt;向上突破 / 横盘-&gt;上涨中继 / 横盘-&gt;支撑位附近停顿</li>
+          <li>深证成指：支撑位 13880.06；压力位 14531.98；日线箱体 13169.26-14478.07；上升趋势线 12881.57→13211.11；周线趋势待确认，日线待确认，短线偏观察，当前位置靠近箱体下沿；当前位置仍在修复观察阶段，横住时间不够，不能直接上调成突破；失效看 收盘有效跌破 13880.06；有效跌破 13169.26 后无法收回；颈线 13169.26 被反向重新收回或跌破失效</li><li>科创50：支撑位 1351.88；压力位 1356.08；下方次级支撑 1286.25；日线箱体 1249.01-1412.53；上升趋势线 1273.49→1375.02；当前跌破未确认；周线趋势待确认，日线待确认，短线偏观察，当前位置顶着压力位震荡；当前支撑 1351.88 已失守且尚未收回，当前先按失守后下看下一支撑处理，重点观察 下方次级支撑 1286.25；失效看 收盘有效跌破 1351.88；有效跌破 1249.01 后无法收回；颈线 1351.88 被反向重新收回或跌破失效</li><li>科技：破位待确认；周线底部构造中，日线顺周线突破，短线偏延续；组内关键支撑附近仍在确认破位链是否形成，先不急着按止跌处理；重点看 电子化学品 / 元件，组内不少方向回到前期平台，但当前位置横住时间不足；失效看 若组内代表方向持续失守 4901.39 一带，当前结构确认失败；只有有效站稳 5667.03 之上，向上修复才算真正确认；学习锚点 向上突破-&gt;向上突破 / 横盘-&gt;上涨中继 / 横盘-&gt;支撑位附近停顿</li>
         </ul>
       </section>
     </div>
@@ -111,71 +120,37 @@
       </div>
       <div class="index-grid">
         
-            <a class="index-card" href="./assets/宽基_上证指数.html">
-              <div class="index-card-top">
-                <div>
-                  <div class="index-card-title">上证指数</div>
-                  <div class="index-card-subtitle">区间震荡 | 修复观察</div>
-                </div>
-                <div class="index-chip">延续</div>
-              </div>
-              <div class="index-card-line"><strong>周线 / 日线：</strong>大箱体震荡 / 顺周线突破</div>
-              <div class="index-card-line"><strong>关键线：</strong>支撑位 3805.26；压力位 3955.94；日线箱体 3794.68-4141.65；周线箱体 3420.11-4197.23；上升趋势线 3816.58→4119.97</div>
-              <div class="index-card-line"><strong>量能结构：</strong>量平 | 压力位附近量能平衡 | 量比 0.99 | 分位 32%</div>
-              <div class="index-card-line"><strong>全景结构：</strong>周线 大箱体震荡；日线 顺周线突破</div>
-              <div class="index-card-line"><strong>判断链：</strong>周线大箱体震荡，日线顺周线突破，短线偏延续，当前位置顶着压力位震荡；当前位置仍在修复观察阶段，横住时间不够，不能直接上调成突破</div>
-              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 3794.68-4141.65；水平支撑 3805.26；水平压力 3955.94；上升趋势线 3816.58→4119.97；下降趋势线 4190.87→4118.34；颈线候选 3794.68</div>
-              <div class="index-card-line"><strong>失效条件：</strong>收盘有效跌破 3805.26；有效跌破 3794.68 后无法收回；颈线 3794.68 被反向重新收回或跌破失效</div>
-            </a>
-            
             <a class="index-card" href="./assets/宽基_深证成指.html">
               <div class="index-card-top">
                 <div>
                   <div class="index-card-title">深证成指</div>
-                  <div class="index-card-subtitle">区间震荡 | 修复观察 | 失地收回未跟随</div>
+                  <div class="index-card-subtitle">区间震荡 | 修复观察</div>
                 </div>
                 <div class="index-chip">观察</div>
               </div>
               <div class="index-card-line"><strong>周线 / 日线：</strong>趋势待确认 / 待确认</div>
-              <div class="index-card-line"><strong>关键线：</strong>支撑位 13880.05；压力位 14531.97；日线箱体 13169.26-14531.03；上升趋势线 12881.57→13208.49</div>
-              <div class="index-card-line"><strong>量能结构：</strong>量平 | 支撑位附近量能平衡 | 量比 1.07 | 分位 42%</div>
+              <div class="index-card-line"><strong>关键线：</strong>支撑位 13880.06；压力位 14531.98；日线箱体 13169.26-14478.07；上升趋势线 12881.57→13211.11</div>
+              <div class="index-card-line"><strong>量能结构：</strong>明显缩量 | 低位缩量承接观察 | 量比 0.93 | 分位 10%</div>
               <div class="index-card-line"><strong>全景结构：</strong>周线 趋势待确认；日线 待确认</div>
-              <div class="index-card-line"><strong>判断链：</strong>周线趋势待确认，日线待确认，短线偏观察，当前位置靠近箱体下沿；前面失守的关键位 13880.05 暂时收回，但还没有形成 follow-through confirmation</div>
-              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 13169.26-14531.03；水平支撑 13880.05；水平压力 14531.97；上升趋势线 12881.57→13208.49；下降趋势线 14532.91→14529.84；颈线候选 13169.26</div>
-              <div class="index-card-line"><strong>失效条件：</strong>收盘有效跌破 13880.05；有效跌破 13169.26 后无法收回；颈线 13169.26 被反向重新收回或跌破失效</div>
-            </a>
-            
-            <a class="index-card" href="./assets/宽基_创业板指.html">
-              <div class="index-card-top">
-                <div>
-                  <div class="index-card-title">创业板指</div>
-                  <div class="index-card-subtitle">区间震荡 | 修复观察 | 失地收回未跟随</div>
-                </div>
-                <div class="index-chip">观察</div>
-              </div>
-              <div class="index-card-line"><strong>周线 / 日线：</strong>大箱体震荡 / 震荡等待确认</div>
-              <div class="index-card-line"><strong>关键线：</strong>支撑位 3199.14；压力位 3375.64；日线箱体 3133.78-3426.61；周线箱体 2118.55-3426.61；上升趋势线 3016.58→3174.18</div>
-              <div class="index-card-line"><strong>量能结构：</strong>温和放量 | 压力位附近量能观察 | 量比 1.14 | 分位 42%</div>
-              <div class="index-card-line"><strong>全景结构：</strong>周线 大箱体震荡；日线 震荡等待确认</div>
-              <div class="index-card-line"><strong>判断链：</strong>周线大箱体震荡，日线震荡等待确认，短线偏观察，当前位置顶着压力位震荡；前面失守的关键位 3199.14 暂时收回，但还没有形成 follow-through confirmation</div>
-              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 3133.78-3426.61；水平支撑 3199.14；水平压力 3375.64；上升趋势线 3016.58→3174.18；下降趋势线 3416.84→3334.66；颈线候选 3155.27</div>
-              <div class="index-card-line"><strong>失效条件：</strong>收盘有效跌破 3199.14；有效跌破 3133.78 后无法收回；颈线 3155.27 被反向重新收回或跌破失效</div>
+              <div class="index-card-line"><strong>判断链：</strong>周线趋势待确认，日线待确认，短线偏观察，当前位置靠近箱体下沿；当前位置仍在修复观察阶段，横住时间不够，不能直接上调成突破</div>
+              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 13169.26-14478.07；水平支撑 13880.06；水平压力 14531.98；上升趋势线 12881.57→13211.11；下降趋势线 14532.91→14529.80；颈线候选 13169.26</div>
+              <div class="index-card-line"><strong>失效条件：</strong>收盘有效跌破 13880.06；有效跌破 13169.26 后无法收回；颈线 13169.26 被反向重新收回或跌破失效</div>
             </a>
             
             <a class="index-card" href="./assets/宽基_科创50.html">
               <div class="index-card-top">
                 <div>
                   <div class="index-card-title">科创50</div>
-                  <div class="index-card-subtitle">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="index-card-subtitle">区间震荡 | 破位待确认 | 破位待确认</div>
                 </div>
                 <div class="index-chip">观察</div>
               </div>
               <div class="index-card-line"><strong>周线 / 日线：</strong>趋势待确认 / 待确认</div>
-              <div class="index-card-line"><strong>关键线：</strong>支撑位 1351.88；压力位 1356.08；日线箱体 1249.01-1427.10；上升趋势线 1273.49→1374.28</div>
-              <div class="index-card-line"><strong>量能结构：</strong>温和放量 | 支撑位附近量能观察 | 量比 1.10 | 分位 40%</div>
+              <div class="index-card-line"><strong>关键线：</strong>支撑位 1351.88；压力位 1356.08；下方次级支撑 1286.25；日线箱体 1249.01-1412.53；上升趋势线 1273.49→1375.02</div>
+              <div class="index-card-line"><strong>量能结构：</strong>地量 | 低位缩量承接观察 | 量比 0.76 | 分位 7%</div>
               <div class="index-card-line"><strong>全景结构：</strong>周线 趋势待确认；日线 待确认</div>
-              <div class="index-card-line"><strong>判断链：</strong>周线趋势待确认，日线待确认，短线偏观察，当前位置顶着压力位震荡；当前位置仍在修复观察阶段，横住时间不够，不能直接上调成突破</div>
-              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 1249.01-1427.10；水平支撑 1351.88；水平压力 1356.08；上升趋势线 1273.49→1374.28；下降趋势线 1496.06→1494.31；颈线候选 1351.88</div>
+              <div class="index-card-line"><strong>判断链：</strong>周线趋势待确认，日线待确认，短线偏观察，当前位置顶着压力位震荡；当前支撑 1351.88 已失守且尚未收回，当前先按失守后下看下一支撑处理，重点观察 下方次级支撑 1286.25</div>
+              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 1249.01-1412.53；水平支撑 1351.88；水平压力 1356.08；上升趋势线 1273.49→1375.02；下降趋势线 1496.06→1494.30；颈线候选 1351.88</div>
               <div class="index-card-line"><strong>失效条件：</strong>收盘有效跌破 1351.88；有效跌破 1249.01 后无法收回；颈线 1351.88 被反向重新收回或跌破失效</div>
             </a>
             
@@ -183,143 +158,75 @@
               <div class="index-card-top">
                 <div>
                   <div class="index-card-title">北证50</div>
-                  <div class="index-card-subtitle">趋势转弱 | 修复观察 | 急跌后修复</div>
+                  <div class="index-card-subtitle">趋势转弱 | 破位待确认 | 破位待确认</div>
                 </div>
                 <div class="index-chip">观察</div>
               </div>
               <div class="index-card-line"><strong>周线 / 日线：</strong>趋势待确认 / 待确认</div>
-              <div class="index-card-line"><strong>关键线：</strong>支撑位 1243.66；压力位 1312.07；日线箱体 1239.81-1441.65；上升趋势线 1438.76→1639.35</div>
-              <div class="index-card-line"><strong>量能结构：</strong>温和放量 | 压力位附近量能观察 | 量比 1.11 | 分位 43%</div>
+              <div class="index-card-line"><strong>关键线：</strong>支撑位 1243.66；压力位 1312.07；日线箱体 1239.81-1434.37；上升趋势线 1438.76→1641.50</div>
+              <div class="index-card-line"><strong>量能结构：</strong>明显缩量 | 箱体下沿附近缩量等待方向 | 量比 0.92 | 分位 13%</div>
               <div class="index-card-line"><strong>全景结构：</strong>周线 趋势待确认；日线 待确认</div>
-              <div class="index-card-line"><strong>判断链：</strong>周线趋势待确认，日线待确认，短线偏观察，当前位置顶着压力位震荡；这一段更像急跌后的修复，当前仍在 1312.07 下方或附近，先看能否补时间</div>
-              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 1239.81-1441.65；水平支撑 1243.66；水平压力 1312.07；上升趋势线 1438.76→1639.35；下降趋势线 1598.03→1286.07；颈线候选 1302.30</div>
+              <div class="index-card-line"><strong>判断链：</strong>周线趋势待确认，日线待确认，短线偏观察，当前位置顶着压力位震荡；关键支撑 1243.66 已被触发或逼近失守，但跟跌是否形成还需要后续确认</div>
+              <div class="index-card-line"><strong>图形对象：</strong>日线箱体 1239.81-1434.37；水平支撑 1243.66；水平压力 1312.07；上升趋势线 1438.76→1641.50；下降趋势线 1598.03→1281.74；颈线候选 1302.30</div>
               <div class="index-card-line"><strong>失效条件：</strong>收盘有效跌破 1243.66；有效跌破 1239.81 后无法收回；颈线 1302.30 被反向重新跌破或突破失效</div>
             </a>
             
       </div>
     </section>
     
-    
-    <div class="learning-grid">
-      <section class="learning-card learning-overview-card">
-        <h2>最新学习成果</h2>
-        <div class="learning-meta">来源：yunqi-transcript-corpus-cursor 跨批次学习汇总 + compiled-wiki | 面板刷新：2026-04-09T12:21:13 | 学习汇总：2026-04-09T10:52:28</div>
-        <div class="metric-grid">
-          <div class="metric-box">
-            <div class="metric-value">26/43</div>
-            <div class="metric-label">学习批次通过</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">171</div>
-            <div class="metric-label">已深学视频数</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">180</div>
-            <div class="metric-label">前处理可学池</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">592</div>
-            <div class="metric-label">扫描总视频</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">193</div>
-            <div class="metric-label">稳定局部形态规则</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">4410/255</div>
-            <div class="metric-label">局部触发 / 全景趋势项</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">23/3</div>
-            <div class="metric-label">几何确认 / 几何推断</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">pass</div>
-            <div class="metric-label">TA Gradecard</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">pass</div>
-            <div class="metric-label">Compiled Wiki</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">84</div>
-            <div class="metric-label">稳定知识页</div>
-          </div>
-        </div>
-        <div class="learning-note"><strong>当前主线：</strong>当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。</div>
-        <div class="learning-note"><strong>进度说明：</strong>171 条是已完成 5 条一学深学批次的视频；180 条是已通过 A 股前处理 gate、可继续进入学习主链的样本池；全扫描总量 592 条。</div>
-        <div class="learning-note"><strong>精选策略：</strong>mixed_context 候选 35 条，其中 panorama-rich 2 条，但标题偏港美风格的样本仍有 31 条，当前继续以 A 股精选批次学习更稳妥。</div>
-        <div class="learning-note"><strong>知识页引用示例：</strong>trigger:向上突破::向上突破(verified/pass) / trigger:横盘::上涨中继(stable/pass) / trigger:横盘::支撑位附近停顿(verified/pass)</div>
-        <div class="learning-note"><strong>知识库提醒：</strong>暂无</div>
-        <div class="learning-note"><strong>验证状态：</strong>compiled-wiki 已完成显式接入</div>
-        <div class="learning-note"><strong>最新对象硬化：</strong></div>
-        <ul><li>局部升级出现但大盘 panorama 仍待验证的 waiting-upgrade 链 （hardening_in_progress；学到：局部升级 clue 可以明显增多，但大盘 panorama 仍然可能反复停在 待验证。 / 通道运行、横盘整理、反弹修复 在这批里比标题里的 强词 更稳定，说明图比词更保守。；下一步：继续寻找局部升级已出现且 market panorama 也同步转强的样本，补最终升级门。）</li><li>mixed_context survivor objects 与 A股主链对象成熟度对照收束 （hardening_in_progress；学到：破位 family 的对象成熟度目前最高，因为它已经完成 warning-state 与 confirmed-state 的阶段拆分。 / 通道 family 的跨环境稳定性主要来自子对象稳定，而不是 raw 通道 lexical group 稳定。；下一步：优先继续硬化 压力位 与 支撑位 的边界来源分流，同时继续把 破位 保持在 phase-split 接口下、把 通道 固定为子对象调用。）</li></ul>
-        <div class="learning-note"><strong>mixed-context 样例：</strong></div>
-        <ul><li>7578682709753498914港股持续盘整，恒科触底了吗？</li><li>7581280573109341480港股稳转强，证券板块大涨，后市怎么看？</li><li>7569776265549450539港股全面大涨，芯片飙升6.2%，后市怎么走？</li></ul>
-      </section>
-      <section class="learning-card">
-        <h2>稳定局部形态</h2>
-        <ul><li>向上突破 -&gt; 向上突破 （70条视频 / 31个批次；常见锚点：上证 / 上证指数 / 元件 / 军工 等；知识页：trigger:向上突破::向上突破(verified/pass)）</li><li>横盘 -&gt; 上涨中继 （38条视频 / 23个批次；常见锚点：上证 / 上证指数 / 元件 / 光伏 等；知识页：trigger:横盘::上涨中继(stable/pass)）</li><li>横盘 -&gt; 支撑位附近停顿 （25条视频 / 22个批次；常见锚点：保险 / 元件 / 光学光电子 / 创业板 等；知识页：trigger:横盘::支撑位附近停顿(verified/pass)）</li><li>阳线 -&gt; 向上突破 （25条视频 / 18个批次；常见锚点：上证指数 / 元件 / 军工 / 创业板 等；知识页：trigger:阳线::向上突破(verified/pass)）</li><li>头肩底 -&gt; 头肩底确认 （21条视频 / 14个批次；常见锚点：保险 / 化学制药 / 医疗 / 医药 等；知识页：object_rule:头肩底确认::颈线突破转强(verified/pass) / object_rule:头肩底构造中::颈线待确认(verified/pass)）</li><li>回落 -&gt; 向上突破 （18条视频 / 17个批次；常见锚点：上证指数 / 军工 / 创业板 / 化学 等；知识页：trigger:回落::向上突破(verified/pass)）</li><li>成交量 -&gt; 向上突破 （18条视频 / 14个批次；常见锚点：光伏 / 创业板 / 化学 / 医疗 等；知识页：）</li><li>横盘 -&gt; 压力位附近停顿 （17条视频 / 16个批次；常见锚点：上证指数 / 元件 / 军工 / 创业板 等；知识页：trigger:横盘::压力位附近停顿(verified/pass)）</li></ul>
-      </section>
-      <section class="learning-card">
-        <h2>全景趋势锚点</h2>
-        <ul><li>大盘：待验证 （34条视频；结构词：关键位附近徘徊 / 十字星后的方向待确认 / 大盘结构观察 等；知识页：anchor:上证指数(stable/pass)）</li><li>科创50：偏弱 （16条视频；结构词：关键位附近徘徊 / 十字星后的方向待确认 / 横盘整理 等；知识页：anchor:科创50(stable/pass)）</li><li>科创50：震荡整理 （15条视频；结构词：十字星后的方向待确认 / 横盘整理 / 科创50结构观察 等；知识页：anchor:科创50(stable/pass)）</li><li>创业板：震荡整理 （15条视频；结构词：创业板结构观察 / 横盘整理 / 通道边界约束；知识页：anchor:创业板指(stable/pass)）</li><li>大盘：看涨 （11条视频；结构词：上升通道内运行 / 大盘结构观察 / 横盘整理 等；知识页：anchor:上证指数(stable/pass)）</li><li>科创50：待验证 （11条视频；结构词：科创50结构观察 / 通道边界约束；知识页：anchor:科创50(stable/pass)）</li></ul>
-      </section>
-    </div>
-    
+    <section class="section-heading section-layer">
+      <div>
+        <h2>组别主判断</h2>
+        <div class="section-heading-note">先看 dominant action，再决定要不要进入资产详情页深看。</div>
+      </div>
+    </section>
     <div class="group-grid">
       
             <section class="group-card">
               <div class="group-header">
-                <h2>科技</h2>
-                <div class="group-meta">大平台内小横盘 · 区间震荡 | 破位待确认 | 突破未确认 / 周日线冲突 / 放量冲高 / 低位放量承接 / 跌破未确认 / 支撑位待确认 / 高位直落 | 破位待确认 · 周线 底部构造中 / 日线 顺周线突破</div>
+                <div>
+                  <h2>科技</h2>
+                  <div class="group-meta">区间震荡 | 破位待确认 | 破位待确认 | 大平台内小横盘</div>
+                </div>
+                <div class="group-chip">破位待确认</div>
               </div>
+              <div class="group-context">周线 底部构造中 / 日线 顺周线突破</div>
               <div class="group-observation">重点看 电子化学品 / 元件，组内不少方向回到前期平台，但当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/科技_IT服务.html">
                   <div class="asset-name">IT服务</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/科技_元件.html">
                   <div class="asset-name">元件</div>
-                  <div class="asset-meta">上涨中继 | 修复观察 | 突破候选</div>
+                  <div class="asset-meta">修复观察 | 突破候选 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/科技_光学光电子.html">
                   <div class="asset-name">光学光电子</div>
-                  <div class="asset-meta">支撑反弹 | 破位待确认 | 破位待确认</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/科技_半导体.html">
-                  <div class="asset-name">半导体</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 失地收回未跟随</div>
+                  <div class="asset-meta">破位待确认 | 破位待确认 | 趋势延续通道</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/科技_消费电子.html">
                   <div class="asset-name">消费电子</div>
-                  <div class="asset-meta">支撑反弹 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 急跌后修复 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/科技_电子化学品.html">
                   <div class="asset-name">电子化学品</div>
-                  <div class="asset-meta">上涨中继 | 修复观察 | 突破候选</div>
+                  <div class="asset-meta">修复观察 | 突破候选 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/科技_计算机设备.html">
                   <div class="asset-name">计算机设备</div>
-                  <div class="asset-meta">趋势转弱 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 上涨中继箱体</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/科技_软件开发.html">
                   <div class="asset-name">软件开发</div>
-                  <div class="asset-meta">趋势转弱 | 修复观察 | 失地收回未跟随</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/科技_通信设备.html">
-                  <div class="asset-name">通信设备</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | 上涨中继横盘</div>
                 </a>
                 
               </div>
@@ -327,66 +234,29 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>游戏</h2>
-                <div class="group-meta">震荡收敛 · 区间震荡 | 修复观察 | 放量冲高 / 低位放量承接 / 突破未确认 · 周线 趋势待确认 / 日线 待确认</div>
+                <div>
+                  <h2>能源</h2>
+                  <div class="group-meta">区间震荡 | 修复观察 | 急跌后修复 | 高位直落后弱整理</div>
+                </div>
+                <div class="group-chip">修复观察</div>
               </div>
-              <div class="group-observation">重点看 游戏，组内不少方向回到前期平台，但当前位置横住时间不足</div>
-              <div class="asset-list">
-                
-                <a class="asset-item" href="./assets/游戏_游戏.html">
-                  <div class="asset-name">游戏</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
-                </a>
-                
-              </div>
-            </section>
-            
-            <section class="group-card">
-              <div class="group-header">
-                <h2>能源</h2>
-                <div class="group-meta">高位直落后弱整理 · 区间震荡 | 破位待确认 | 缩量反弹 / 明显缩量 / 高位直落 / 跌破未确认 / 支撑位待确认 / 放量冲高 / 低位放量承接 / 爆量 / 套牢盘重 | 破位待确认 · 周线 底部构造中 / 日线 顺周线回踩</div>
-              </div>
-              <div class="group-observation">重点看 电力行业 / 燃气，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="group-context">周线 大箱体震荡 / 日线 震荡等待确认</div>
+              <div class="group-observation">重点看 风电设备 / 光伏设备，组内多为高位直落，当前位置尚未横住</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/能源_光伏设备.html">
                   <div class="asset-name">光伏设备</div>
-                  <div class="asset-meta">区间震荡 | 破位待确认 | 破位待确认</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/能源_煤炭行业.html">
-                  <div class="asset-name">煤炭行业</div>
-                  <div class="asset-meta">支撑反弹 | 修复观察 | 失地收回未跟随</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/能源_燃气.html">
-                  <div class="asset-name">燃气</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/能源_电力行业.html">
-                  <div class="asset-name">电力行业</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 失地收回未跟随</div>
+                  <div class="asset-meta">修复观察 | 急跌后修复 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/能源_电池.html">
                   <div class="asset-name">电池</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/能源_电网设备.html">
-                  <div class="asset-name">电网设备</div>
-                  <div class="asset-meta">区间震荡 | 破位待确认 | 破位待确认</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/能源_石油行业.html">
-                  <div class="asset-name">石油行业</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 急跌后修复 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/能源_风电设备.html">
                   <div class="asset-name">风电设备</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 急跌后修复 | 上涨中继横盘</div>
                 </a>
                 
               </div>
@@ -394,35 +264,29 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>周期资源</h2>
-                <div class="group-meta">关键位失而复得 · 区间震荡 | 破位待确认 | 缩量反弹 / 明显缩量 / 突破未确认 / 横盘时间不足 / 放量冲高 | 破位待确认 · 周线 大箱体震荡 / 日线 震荡等待确认</div>
+                <div>
+                  <h2>周期资源</h2>
+                  <div class="group-meta">区间震荡 | 破位待确认 | 破位待确认 | 震荡收敛</div>
+                </div>
+                <div class="group-chip">破位待确认</div>
               </div>
-              <div class="group-observation">重点看 贵金属 / 小金属，组内已有关键位失而复得迹象，先看回踩后能否站稳</div>
+              <div class="group-context">周线 趋势待确认 / 日线 待确认</div>
+              <div class="group-observation">重点看 小金属 / 金属新材料，组内不少方向回到前期平台，但当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/周期资源_小金属.html">
                   <div class="asset-name">小金属</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 失地收回未跟随</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/周期资源_能源金属.html">
-                  <div class="asset-name">能源金属</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 失地收回未跟随</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/周期资源_贵金属.html">
-                  <div class="asset-name">贵金属</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | nan</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/周期资源_金属新材料.html">
                   <div class="asset-name">金属新材料</div>
-                  <div class="asset-meta">区间震荡 | 破位待确认 | 破位待确认</div>
+                  <div class="asset-meta">破位待确认 | 破位待确认 | 失守后下看下一支撑</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/周期资源_铜.html">
                   <div class="asset-name">铜</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | nan</div>
                 </a>
                 
               </div>
@@ -430,20 +294,19 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>基建</h2>
-                <div class="group-meta">关键位失而复得 · 区间震荡 | 修复观察 | 缩量反弹 / 高位直落 / 跌破未确认 / 支撑位待确认 | 急跌后修复 · 周线 趋势待确认 / 日线 待确认</div>
+                <div>
+                  <h2>基建</h2>
+                  <div class="group-meta">区间震荡 | 修复观察 | 突破候选 | 压力位下蓄势</div>
+                </div>
+                <div class="group-chip">修复观察</div>
               </div>
-              <div class="group-observation">重点看 基础建设 / 基建工程，组内已有关键位失而复得迹象，先看回踩后能否站稳</div>
+              <div class="group-context">周线 底部构造中 / 日线 顺周线整理</div>
+              <div class="group-observation">重点看 基建工程，组内不少方向处在关键位下补时间，当前更像蓄势而不是直接转弱</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/基建_基建工程.html">
                   <div class="asset-name">基建工程</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 失地收回未跟随</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/基建_基础建设.html">
-                  <div class="asset-name">基础建设</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 突破候选 | nan</div>
                 </a>
                 
               </div>
@@ -451,20 +314,24 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>军工</h2>
-                <div class="group-meta">高位直落后弱整理 · 区间震荡 | 修复观察 | 量能正常 / 高位直落 | 急跌后修复 · 周线 大箱体震荡 / 日线 震荡等待确认</div>
+                <div>
+                  <h2>军工</h2>
+                  <div class="group-meta">趋势转弱 | 修复观察 | 急跌后修复 | 高位直落后弱整理</div>
+                </div>
+                <div class="group-chip">修复观察</div>
               </div>
+              <div class="group-context">周线 大箱体震荡 / 日线 震荡等待确认</div>
               <div class="group-observation">重点看 船舶制造 / 航天航空，组内多为高位直落，当前位置尚未横住</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/军工_航天航空.html">
                   <div class="asset-name">航天航空</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 急跌后修复 | 上涨中继箱体</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/军工_船舶制造.html">
                   <div class="asset-name">船舶制造</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | 上涨中继箱体</div>
                 </a>
                 
               </div>
@@ -472,40 +339,29 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>工业</h2>
-                <div class="group-meta">压力位下蓄势 · 区间震荡 | 破位待确认 | 量能正常 / 放量冲高 / 突破未确认 / 缩量反弹 / 高位直落 / 低位放量承接 | 破位待确认 · 周线 底部构造中 / 日线 顺周线整理</div>
+                <div>
+                  <h2>工业</h2>
+                  <div class="group-meta">区间震荡 | 破位待确认 | 破位待确认 | 高位直落后弱整理</div>
+                </div>
+                <div class="group-chip">破位待确认</div>
               </div>
-              <div class="group-observation">重点看 化学制品 / 通用设备，组内不少方向回到前期平台，但当前位置横住时间不足</div>
+              <div class="group-context">周线 大箱体震荡 / 日线 震荡等待确认</div>
+              <div class="group-observation">重点看 化学原料 / 化学制品，组内多为高位直落，当前位置尚未横住</div>
               <div class="asset-list">
-                
-                <a class="asset-item" href="./assets/工业_专用设备.html">
-                  <div class="asset-name">专用设备</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
-                </a>
                 
                 <a class="asset-item" href="./assets/工业_化学制品.html">
                   <div class="asset-name">化学制品</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/工业_化学原料.html">
                   <div class="asset-name">化学原料</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/工业_工程机械.html">
-                  <div class="asset-name">工程机械</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/工业_通用设备.html">
-                  <div class="asset-name">通用设备</div>
-                  <div class="asset-meta">区间震荡 | 等回踩确认 | 回踩待确认</div>
+                  <div class="asset-meta">修复观察 | 急跌后修复 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/工业_钢铁行业.html">
                   <div class="asset-name">钢铁行业</div>
-                  <div class="asset-meta">区间震荡 | 破位待确认 | 破位待确认</div>
+                  <div class="asset-meta">破位待确认 | 破位待确认 | 上涨中继横盘</div>
                 </a>
                 
               </div>
@@ -513,25 +369,19 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>金融</h2>
-                <div class="group-meta">关键位失而复得 · 区间震荡 | 修复观察 | 跌破未确认 / 支撑位待确认 / 放量冲高 / 高位直落 / 低位放量承接 / 横盘时间不足 | 急跌后修复 · 周线 大箱体震荡 / 日线 震荡等待确认</div>
+                <div>
+                  <h2>金融</h2>
+                  <div class="group-meta">区间震荡 | 修复观察 | 收敛整理</div>
+                </div>
+                <div class="group-chip">修复观察</div>
               </div>
-              <div class="group-observation">重点看 银行 / 保险，组内已有关键位失而复得迹象，先看回踩后能否站稳</div>
+              <div class="group-context">周线 大箱体震荡 / 日线 震荡等待确认</div>
+              <div class="group-observation">重点看 银行，组内当前位置更像收敛整理，重点看后续是否继续压缩并完成确认</div>
               <div class="asset-list">
-                
-                <a class="asset-item" href="./assets/金融_保险.html">
-                  <div class="asset-name">保险</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 失地收回未跟随</div>
-                </a>
-                
-                <a class="asset-item" href="./assets/金融_证券.html">
-                  <div class="asset-name">证券</div>
-                  <div class="asset-meta">趋势转弱 | 修复观察 | 失地收回未跟随</div>
-                </a>
                 
                 <a class="asset-item" href="./assets/金融_银行.html">
                   <div class="asset-name">银行</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 上涨中继横盘</div>
                 </a>
                 
               </div>
@@ -539,20 +389,19 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>消费</h2>
-                <div class="group-meta">高位直落后弱整理 · 区间震荡 | 修复观察 | 高位直落 / 横盘时间不足 | 急跌后修复 · 周线 大箱体震荡 / 日线 震荡等待确认</div>
+                <div>
+                  <h2>消费</h2>
+                  <div class="group-meta">区间震荡 | 修复观察 | 大平台内小横盘</div>
+                </div>
+                <div class="group-chip">修复观察</div>
               </div>
-              <div class="group-observation">重点看 汽车零部件 / 食品饮料，组内不少方向回到前期平台，但这一波下来得偏急，当前位置横住时间不足</div>
+              <div class="group-context">周线 大箱体震荡 / 日线 震荡等待确认</div>
+              <div class="group-observation">重点看 食品饮料，组内不少方向回到前期平台，但当前位置横住时间不足</div>
               <div class="asset-list">
-                
-                <a class="asset-item" href="./assets/消费_汽车零部件.html">
-                  <div class="asset-name">汽车零部件</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
-                </a>
                 
                 <a class="asset-item" href="./assets/消费_食品饮料.html">
                   <div class="asset-name">食品饮料</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | 上涨中继横盘</div>
                 </a>
                 
               </div>
@@ -560,25 +409,24 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>医药</h2>
-                <div class="group-meta">假动作待确认 · 区间震荡 | 修复观察 | 放量冲高 / 套牢盘重 / 突破未确认 / 放量滞涨 / 低位放量承接 / 爆量 / 跌破未确认 / 放量换手 / 支撑位待确认 | 急跌后修复 · 周线 底部构造中 / 日线 顺周线整理</div>
+                <div>
+                  <h2>医药</h2>
+                  <div class="group-meta">区间震荡 | 修复观察 | 假动作待确认</div>
+                </div>
+                <div class="group-chip">修复观察</div>
               </div>
-              <div class="group-observation">重点看 化学制药 / 中药，组内已有假突破或假跌破候选，当前先看关键位附近能否重新稳住</div>
+              <div class="group-context">周线 大箱体震荡 / 日线 震荡等待确认</div>
+              <div class="group-observation">重点看 化学制药 / 医药商业，组内已有假突破或假跌破候选，当前先看关键位附近能否重新稳住</div>
               <div class="asset-list">
-                
-                <a class="asset-item" href="./assets/医药_中药.html">
-                  <div class="asset-name">中药</div>
-                  <div class="asset-meta">区间震荡 | 修复观察</div>
-                </a>
                 
                 <a class="asset-item" href="./assets/医药_化学制药.html">
                   <div class="asset-name">化学制药</div>
-                  <div class="asset-meta">上涨中继 | 等突破确认 | 突破候选</div>
+                  <div class="asset-meta">修复观察 | 上涨中继横盘</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/医药_医药商业.html">
                   <div class="asset-name">医药商业</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | nan</div>
                 </a>
                 
               </div>
@@ -586,47 +434,130 @@
             
             <section class="group-card">
               <div class="group-header">
-                <h2>建材</h2>
-                <div class="group-meta">震荡收敛 · 区间震荡 | 修复观察 | 缩量反弹 / 放量冲高 / 低位放量承接 / 高位直落 / 跌破未确认 / 支撑位待确认 / 地量 / 地量观望 | 急跌后修复 · 周线 底部构造中 / 日线 顺周线整理</div>
+                <div>
+                  <h2>建材</h2>
+                  <div class="group-meta">区间震荡 | 修复观察 | 急跌后修复 | 压力位下蓄势</div>
+                </div>
+                <div class="group-chip">修复观察</div>
               </div>
-              <div class="group-observation">重点看 装修建材 / 玻璃玻纤，组内不少方向回到前期平台，但当前位置横住时间不足</div>
+              <div class="group-context">周线 底部构造中 / 日线 顺周线整理</div>
+              <div class="group-observation">重点看 水泥建材 / 装修建材，组内不少方向回到前期平台，但当前位置横住时间不足</div>
               <div class="asset-list">
                 
                 <a class="asset-item" href="./assets/建材_水泥建材.html">
                   <div class="asset-name">水泥建材</div>
-                  <div class="asset-meta">趋势转弱 | 修复观察</div>
+                  <div class="asset-meta">修复观察 | nan</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/建材_玻璃玻纤.html">
                   <div class="asset-name">玻璃玻纤</div>
-                  <div class="asset-meta">支撑反弹 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | 急跌后修复 | nan</div>
                 </a>
                 
                 <a class="asset-item" href="./assets/建材_装修建材.html">
                   <div class="asset-name">装修建材</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 失地收回未跟随</div>
-                </a>
-                
-              </div>
-            </section>
-            
-            <section class="group-card">
-              <div class="group-header">
-                <h2>航运</h2>
-                <div class="group-meta">假动作待确认 · 区间震荡 | 修复观察 | 放量冲高 / 横盘时间不足 / 跌破未确认 / 支撑位待确认 | 急跌后修复 · 周线 大箱体震荡 / 日线 震荡等待确认</div>
-              </div>
-              <div class="group-observation">重点看 航运港口，组内已有假突破或假跌破候选，当前先看关键位附近能否重新稳住</div>
-              <div class="asset-list">
-                
-                <a class="asset-item" href="./assets/航运_航运港口.html">
-                  <div class="asset-name">航运港口</div>
-                  <div class="asset-meta">区间震荡 | 修复观察 | 急跌后修复</div>
+                  <div class="asset-meta">修复观察 | nan</div>
                 </a>
                 
               </div>
             </section>
             
     </div>
+    
+    <section class="section-heading section-layer">
+      <div>
+        <h2>最新能力变化</h2>
+        <div class="section-heading-note">第二层只展示最近真正改变判断质量的能力增量，不再先把大段统计铺满首页。</div>
+      </div>
+    </section>
+    <div class="learning-grid">
+      <section class="learning-card learning-overview-card">
+        <h2>这轮学到了什么</h2>
+        <div class="learning-meta">面板刷新：2026-04-10T01:33:57 | 学习汇总：2026-04-09T10:52:28</div>
+        <div class="learning-note"><strong>当前主线：</strong>当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。</div>
+        <div class="learning-note"><strong>优先可学池：</strong>180 条前处理已就绪，当前深学完成 171 条，全扫描总量 592 条。</div>
+        <div class="learning-note"><strong>最新对象硬化：</strong></div>
+        <ul><li>局部升级出现但大盘 panorama 仍待验证的 waiting-upgrade 链 （hardening_in_progress；学到：局部升级 clue 可以明显增多，但大盘 panorama 仍然可能反复停在 待验证。 / 通道运行、横盘整理、反弹修复 在这批里比标题里的 强词 更稳定，说明图比词更保守。；下一步：继续寻找局部升级已出现且 market panorama 也同步转强的样本，补最终升级门。）</li><li>mixed_context survivor objects 与 A股主链对象成熟度对照收束 （hardening_in_progress；学到：破位 family 的对象成熟度目前最高，因为它已经完成 warning-state 与 confirmed-state 的阶段拆分。 / 通道 family 的跨环境稳定性主要来自子对象稳定，而不是 raw 通道 lexical group 稳定。；下一步：优先继续硬化 压力位 与 支撑位 的边界来源分流，同时继续把 破位 保持在 phase-split 接口下、把 通道 固定为子对象调用。）</li></ul>
+      </section>
+      <section class="learning-card">
+        <h2>消费层接入提醒</h2>
+        <div class="learning-note"><strong>知识库状态：</strong>pass</div>
+        <div class="learning-note"><strong>验证状态：</strong>compiled-wiki 已完成显式接入</div>
+        <div class="learning-note"><strong>知识页引用示例：</strong>trigger:向上突破::向上突破(verified/pass) / trigger:横盘::上涨中继(stable/pass) / trigger:横盘::支撑位附近停顿(verified/pass)</div>
+        <div class="learning-note"><strong>注意事项：</strong>暂无</div>
+        <div class="learning-note"><strong>mixed-context 说明：</strong>mixed_context 候选 35 条，其中 panorama-rich 2 条，但标题偏港美风格的样本仍有 31 条，当前继续以 A 股精选批次学习更稳妥。</div>
+      </section>
+      <section class="learning-card learning-evidence-card">
+        <h2>学习证据层</h2>
+        <details>
+          <summary>展开学习统计、稳定局部形态、全景趋势锚点和 mixed-context 样例</summary>
+          <div class="metric-grid">
+            <div class="metric-box">
+              <div class="metric-value">26/43</div>
+              <div class="metric-label">学习批次通过</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">193</div>
+              <div class="metric-label">稳定局部形态规则</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">4410/255</div>
+              <div class="metric-label">局部触发 / 全景趋势项</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">27/9</div>
+              <div class="metric-label">几何确认 / 几何推断</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">pass</div>
+              <div class="metric-label">TA Gradecard</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">84</div>
+              <div class="metric-label">稳定知识页</div>
+            </div>
+          </div>
+          <div class="learning-note"><strong>稳定局部形态：</strong></div>
+          <ul><li>向上突破 -&gt; 向上突破 （70条视频 / 31个批次；常见锚点：上证 / 上证指数 / 元件 / 军工 等；知识页：trigger:向上突破::向上突破(verified/pass)）</li><li>横盘 -&gt; 上涨中继 （38条视频 / 23个批次；常见锚点：上证 / 上证指数 / 元件 / 光伏 等；知识页：trigger:横盘::上涨中继(stable/pass)）</li><li>横盘 -&gt; 支撑位附近停顿 （25条视频 / 22个批次；常见锚点：保险 / 元件 / 光学光电子 / 创业板 等；知识页：trigger:横盘::支撑位附近停顿(verified/pass)）</li><li>阳线 -&gt; 向上突破 （25条视频 / 18个批次；常见锚点：上证指数 / 元件 / 军工 / 创业板 等；知识页：trigger:阳线::向上突破(verified/pass)）</li><li>头肩底 -&gt; 头肩底确认 （21条视频 / 14个批次；常见锚点：保险 / 化学制药 / 医疗 / 医药 等；知识页：object_rule:头肩底确认::颈线突破转强(verified/pass) / object_rule:头肩底构造中::颈线待确认(verified/pass)）</li><li>回落 -&gt; 向上突破 （18条视频 / 17个批次；常见锚点：上证指数 / 军工 / 创业板 / 化学 等；知识页：trigger:回落::向上突破(verified/pass)）</li><li>成交量 -&gt; 向上突破 （18条视频 / 14个批次；常见锚点：光伏 / 创业板 / 化学 / 医疗 等；知识页：）</li><li>横盘 -&gt; 压力位附近停顿 （17条视频 / 16个批次；常见锚点：上证指数 / 元件 / 军工 / 创业板 等；知识页：trigger:横盘::压力位附近停顿(verified/pass)）</li></ul>
+          <div class="learning-note"><strong>全景趋势锚点：</strong></div>
+          <ul><li>大盘：待验证 （34条视频；结构词：关键位附近徘徊 / 十字星后的方向待确认 / 大盘结构观察 等；知识页：anchor:上证指数(stable/pass)）</li><li>科创50：偏弱 （16条视频；结构词：关键位附近徘徊 / 十字星后的方向待确认 / 横盘整理 等；知识页：anchor:科创50(stable/pass)）</li><li>科创50：震荡整理 （15条视频；结构词：十字星后的方向待确认 / 横盘整理 / 科创50结构观察 等；知识页：anchor:科创50(stable/pass)）</li><li>创业板：震荡整理 （15条视频；结构词：创业板结构观察 / 横盘整理 / 通道边界约束；知识页：anchor:创业板指(stable/pass)）</li><li>大盘：看涨 （11条视频；结构词：上升通道内运行 / 大盘结构观察 / 横盘整理 等；知识页：anchor:上证指数(stable/pass)）</li><li>科创50：待验证 （11条视频；结构词：科创50结构观察 / 通道边界约束；知识页：anchor:科创50(stable/pass)）</li></ul>
+          <div class="learning-note"><strong>mixed-context 样例：</strong></div>
+          <ul><li>7578682709753498914港股持续盘整，恒科触底了吗？</li><li>7581280573109341480港股稳转强，证券板块大涨，后市怎么看？</li><li>7569776265549450539港股全面大涨，芯片飙升6.2%，后市怎么走？</li></ul>
+        </details>
+      </section>
+    </div>
+    
+    
+    <section class="admin-section">
+      <details class="admin-details">
+        <summary>系统信息与更新日志</summary>
+        <div class="admin-grid">
+          <section class="admin-card">
+            <h2>版本信息</h2>
+            <div class="admin-meta">
+              当前版本：<strong>2026-04-09-c1709739</strong><br>
+              复盘日期：2026-04-09<br>
+              构建时间：2026-04-10 01:33:57<br>
+              来源提交：c1709739<br>
+              提交说明：backup: local noon snapshot 2026-04-09 12:00:48<br>
+              发布方式：本地策略迭代后，按计划任务自动生成并推送到 GitHub Pages
+            </div>
+            <button class="admin-btn" id="update-button" type="button" disabled>更新由定时任务触发</button>
+          </section>
+          <section class="admin-card">
+            <h2>最近更新日志</h2>
+            
+          <div class="history-item">
+            <div class="history-title">2026-04-08 -> 2026-04-09-c1709739</div>
+            <div class="history-meta">2026-04-10 01:33:57</div>
+            <ul><li>宽基以区间震荡为主，深证成指 / 科创50仍在箱体内运行，当前更像整理而不是明确单边。</li><li>结合最新学习样本，科技更贴近已学会的“向上突破-&gt;向上突破 / 横盘-&gt;上涨中继 / 横盘-&gt;支撑位附近停顿”型结构，当前重点仍是组内关键支撑附近仍在确认破位链是否形成，先不急着按止跌处理。</li><li>基建更像关键位下蓄势，当前先看补时间和确认，不宜把眼前整理直接当成走弱。</li></ul>
+          </div>
+        
+          </section>
+        </div>
+      </details>
+    </section>
+    
   </div>
 </body>
 </html>
