@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T11:59:03",
+  "generated_at": "2026-04-09T12:21:13",
   "learning_rollup_generated_at": "2026-04-09T10:52:28",
   "processing_index_generated_at": "2026-04-09T06:24:36",
   "batch_count": 43,
@@ -322,5 +322,27 @@
     "7581280573109341480港股稳转强，证券板块大涨，后市怎么看？",
     "7569776265549450539港股全面大涨，芯片飙升6.2%，后市怎么走？"
   ],
-  "selection_strategy_note": "当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。"
+  "selection_strategy_note": "当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。",
+  "recent_learning_effects": [
+    {
+      "pass_id": "2026-04-09-waiting-upgrade-under-weak-panorama-batch_learning",
+      "focus_family": "局部升级出现但大盘 panorama 仍待验证的 waiting-upgrade 链",
+      "evidence_status": "hardening_in_progress",
+      "learned_phenomena": [
+        "局部升级 clue 可以明显增多，但大盘 panorama 仍然可能反复停在 待验证。",
+        "通道运行、横盘整理、反弹修复 在这批里比标题里的 强词 更稳定，说明图比词更保守。"
+      ],
+      "next_high_return_action": "继续寻找局部升级已出现且 market panorama 也同步转强的样本，补最终升级门。"
+    },
+    {
+      "pass_id": "2026-04-09-survivor-object-cross-context-contrast-multicontext_backfill",
+      "focus_family": "mixed_context survivor objects 与 A股主链对象成熟度对照收束",
+      "evidence_status": "hardening_in_progress",
+      "learned_phenomena": [
+        "破位 family 的对象成熟度目前最高，因为它已经完成 warning-state 与 confirmed-state 的阶段拆分。",
+        "通道 family 的跨环境稳定性主要来自子对象稳定，而不是 raw 通道 lexical group 稳定。"
+      ],
+      "next_high_return_action": "优先继续硬化 压力位 与 支撑位 的边界来源分流，同时继续把 破位 保持在 phase-split 接口下、把 通道 固定为子对象调用。"
+    }
+  ]
 }
