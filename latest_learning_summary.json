@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-04-09T02:02:45",
-  "learning_rollup_generated_at": "2026-04-08T17:26:02",
-  "processing_index_generated_at": "2026-04-08T16:44:15",
-  "batch_count": 30,
+  "generated_at": "2026-04-09T11:59:03",
+  "learning_rollup_generated_at": "2026-04-09T10:52:28",
+  "processing_index_generated_at": "2026-04-09T06:24:36",
+  "batch_count": 43,
   "pass_count": 26,
-  "selected_video_count": 101,
-  "learned_video_count": 101,
-  "ready_for_learning_count": 102,
+  "selected_video_count": 171,
+  "learned_video_count": 171,
+  "ready_for_learning_count": 180,
   "scanned_video_count": 592,
   "a_share_primary_count": 333,
   "mixed_context_count": 56,
-  "trigger_item_count": 2308,
-  "panorama_item_count": 132,
-  "stable_trigger_group_count": 116,
-  "trigger_group_count": 440,
-  "panorama_group_count": 24,
+  "trigger_item_count": 4410,
+  "panorama_item_count": 255,
+  "stable_trigger_group_count": 193,
+  "trigger_group_count": 535,
+  "panorama_group_count": 68,
   "ta_gradecard_verdict": "pass",
   "geometry_confirmed_count": 23,
   "geometry_inferred_count": 3,
@@ -30,9 +30,9 @@
     {
       "trigger_label": "向上突破",
       "chart_relation": "向上突破",
-      "source_video_count": 37,
-      "batch_count": 18,
-      "host_anchor_excerpt": "上证指数 / 元件 / 军工 / 创业板 等",
+      "source_video_count": 70,
+      "batch_count": 31,
+      "host_anchor_excerpt": "上证 / 上证指数 / 元件 / 军工 等",
       "compiled_wiki_page_count": 1,
       "compiled_wiki_refs": [
         "trigger:向上突破::向上突破"
@@ -51,9 +51,9 @@
     {
       "trigger_label": "横盘",
       "chart_relation": "上涨中继",
-      "source_video_count": 17,
-      "batch_count": 11,
-      "host_anchor_excerpt": "上证指数 / 光学光电子 / 化学制药 / 半导体 等",
+      "source_video_count": 38,
+      "batch_count": 23,
+      "host_anchor_excerpt": "上证 / 上证指数 / 元件 / 光伏 等",
       "compiled_wiki_page_count": 1,
       "compiled_wiki_refs": [
         "trigger:横盘::上涨中继"
@@ -72,9 +72,9 @@
     {
       "trigger_label": "横盘",
       "chart_relation": "支撑位附近停顿",
-      "source_video_count": 15,
-      "batch_count": 13,
-      "host_anchor_excerpt": "元件 / 光学光电子 / 化学制药 / 恒指 等",
+      "source_video_count": 25,
+      "batch_count": 22,
+      "host_anchor_excerpt": "保险 / 元件 / 光学光电子 / 创业板 等",
       "compiled_wiki_page_count": 1,
       "compiled_wiki_refs": [
         "trigger:横盘::支撑位附近停顿"
@@ -93,9 +93,9 @@
     {
       "trigger_label": "阳线",
       "chart_relation": "向上突破",
-      "source_video_count": 11,
-      "batch_count": 10,
-      "host_anchor_excerpt": "上证指数 / 元件 / 创业板 / 大盘 等",
+      "source_video_count": 25,
+      "batch_count": 18,
+      "host_anchor_excerpt": "上证指数 / 元件 / 军工 / 创业板 等",
       "compiled_wiki_page_count": 1,
       "compiled_wiki_refs": [
         "trigger:阳线::向上突破"
@@ -112,41 +112,43 @@
       "compiled_wiki_validation_needed": false
     },
     {
-      "trigger_label": "大阳线",
-      "chart_relation": "破位转弱",
-      "source_video_count": 11,
-      "batch_count": 6,
-      "host_anchor_excerpt": "军工 / 化学制药 / 工业 / 电力 等",
-      "compiled_wiki_page_count": 1,
+      "trigger_label": "头肩底",
+      "chart_relation": "头肩底确认",
+      "source_video_count": 21,
+      "batch_count": 14,
+      "host_anchor_excerpt": "保险 / 化学制药 / 医疗 / 医药 等",
+      "compiled_wiki_page_count": 2,
       "compiled_wiki_refs": [
-        "trigger:大阳线::破位转弱"
+        "object_rule:头肩底构造中::颈线待确认",
+        "object_rule:头肩底确认::颈线突破转强"
       ],
       "compiled_wiki_ref_paths": [
-        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\triggers\\trigger_大阳线__破位转弱.md"
+        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\object-rules\\object_rule_头肩底确认__颈线突破转强.md",
+        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\object-rules\\object_rule_头肩底构造中__颈线待确认.md"
       ],
-      "compiled_wiki_citation_excerpt": "trigger:大阳线::破位转弱(stable/pass)",
-      "compiled_wiki_path_excerpt": "domain\\triggers\\trigger_大阳线__破位转弱.md",
-      "compiled_wiki_status": "stable",
+      "compiled_wiki_citation_excerpt": "object_rule:头肩底确认::颈线突破转强(verified/pass) / object_rule:头肩底构造中::颈线待确认(verified/pass)",
+      "compiled_wiki_path_excerpt": "domain\\object-rules\\object_rule_头肩底确认__颈线突破转强.md / domain\\object-rules\\object_rule_头肩底构造中__颈线待确认.md",
+      "compiled_wiki_status": "verified",
       "compiled_wiki_page_grade": "pass",
       "compiled_wiki_system_grade": "pass",
       "compiled_wiki_warning_excerpt": "",
-      "compiled_wiki_validation_needed": false
+      "compiled_wiki_validation_needed": true
     },
     {
-      "trigger_label": "阳线",
-      "chart_relation": "反弹修复",
-      "source_video_count": 10,
-      "batch_count": 10,
-      "host_anchor_excerpt": "上证指数 / 化学 / 恒指 / 消费 等",
+      "trigger_label": "回落",
+      "chart_relation": "向上突破",
+      "source_video_count": 18,
+      "batch_count": 17,
+      "host_anchor_excerpt": "上证指数 / 军工 / 创业板 / 化学 等",
       "compiled_wiki_page_count": 1,
       "compiled_wiki_refs": [
-        "trigger:阳线::反弹修复"
+        "trigger:回落::向上突破"
       ],
       "compiled_wiki_ref_paths": [
-        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\triggers\\trigger_阳线__反弹修复.md"
+        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\triggers\\trigger_回落__向上突破.md"
       ],
-      "compiled_wiki_citation_excerpt": "trigger:阳线::反弹修复(verified/pass)",
-      "compiled_wiki_path_excerpt": "domain\\triggers\\trigger_阳线__反弹修复.md",
+      "compiled_wiki_citation_excerpt": "trigger:回落::向上突破(verified/pass)",
+      "compiled_wiki_path_excerpt": "domain\\triggers\\trigger_回落__向上突破.md",
       "compiled_wiki_status": "verified",
       "compiled_wiki_page_grade": "pass",
       "compiled_wiki_system_grade": "pass",
@@ -154,41 +156,37 @@
       "compiled_wiki_validation_needed": false
     },
     {
-      "trigger_label": "颈线",
+      "trigger_label": "成交量",
       "chart_relation": "向上突破",
-      "source_video_count": 10,
-      "batch_count": 10,
-      "host_anchor_excerpt": "元件 / 医疗 / 有色 / 科创50 等",
-      "compiled_wiki_page_count": 1,
-      "compiled_wiki_refs": [
-        "trigger:颈线::向上突破"
-      ],
-      "compiled_wiki_ref_paths": [
-        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\triggers\\trigger_颈线__向上突破.md"
-      ],
-      "compiled_wiki_citation_excerpt": "trigger:颈线::向上突破(verified/pass)",
-      "compiled_wiki_path_excerpt": "domain\\triggers\\trigger_颈线__向上突破.md",
-      "compiled_wiki_status": "verified",
-      "compiled_wiki_page_grade": "pass",
+      "source_video_count": 18,
+      "batch_count": 14,
+      "host_anchor_excerpt": "光伏 / 创业板 / 化学 / 医疗 等",
+      "compiled_wiki_page_count": 0,
+      "compiled_wiki_refs": [],
+      "compiled_wiki_ref_paths": [],
+      "compiled_wiki_citation_excerpt": "",
+      "compiled_wiki_path_excerpt": "",
+      "compiled_wiki_status": "candidate",
+      "compiled_wiki_page_grade": "warn",
       "compiled_wiki_system_grade": "pass",
       "compiled_wiki_warning_excerpt": "",
       "compiled_wiki_validation_needed": false
     },
     {
-      "trigger_label": "颈线位",
-      "chart_relation": "向上突破",
-      "source_video_count": 10,
-      "batch_count": 10,
-      "host_anchor_excerpt": "元件 / 医疗 / 有色 / 科创50 等",
+      "trigger_label": "横盘",
+      "chart_relation": "压力位附近停顿",
+      "source_video_count": 17,
+      "batch_count": 16,
+      "host_anchor_excerpt": "上证指数 / 元件 / 军工 / 创业板 等",
       "compiled_wiki_page_count": 1,
       "compiled_wiki_refs": [
-        "trigger:颈线位::向上突破"
+        "trigger:横盘::压力位附近停顿"
       ],
       "compiled_wiki_ref_paths": [
-        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\triggers\\trigger_颈线位__向上突破.md"
+        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\triggers\\trigger_横盘__压力位附近停顿.md"
       ],
-      "compiled_wiki_citation_excerpt": "trigger:颈线位::向上突破(verified/pass)",
-      "compiled_wiki_path_excerpt": "domain\\triggers\\trigger_颈线位__向上突破.md",
+      "compiled_wiki_citation_excerpt": "trigger:横盘::压力位附近停顿(verified/pass)",
+      "compiled_wiki_path_excerpt": "domain\\triggers\\trigger_横盘__压力位附近停顿.md",
       "compiled_wiki_status": "verified",
       "compiled_wiki_page_grade": "pass",
       "compiled_wiki_system_grade": "pass",
@@ -197,6 +195,26 @@
     }
   ],
   "top_panorama_groups": [
+    {
+      "index_or_market_label": "大盘",
+      "trend_judgment": "待验证",
+      "source_video_count": 34,
+      "structure_phrase_excerpt": "关键位附近徘徊 / 十字星后的方向待确认 / 大盘结构观察 等",
+      "compiled_wiki_page_count": 1,
+      "compiled_wiki_refs": [
+        "anchor:上证指数"
+      ],
+      "compiled_wiki_ref_paths": [
+        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\anchors\\anchor_上证指数.md"
+      ],
+      "compiled_wiki_citation_excerpt": "anchor:上证指数(stable/pass)",
+      "compiled_wiki_path_excerpt": "domain\\anchors\\anchor_上证指数.md",
+      "compiled_wiki_status": "stable",
+      "compiled_wiki_page_grade": "pass",
+      "compiled_wiki_system_grade": "pass",
+      "compiled_wiki_warning_excerpt": "",
+      "compiled_wiki_validation_needed": false
+    },
     {
       "index_or_market_label": "科创50",
       "trend_judgment": "偏弱",
@@ -240,7 +258,7 @@
     {
       "index_or_market_label": "创业板",
       "trend_judgment": "震荡整理",
-      "source_video_count": 14,
+      "source_video_count": 15,
       "structure_phrase_excerpt": "创业板结构观察 / 横盘整理 / 通道边界约束",
       "compiled_wiki_page_count": 1,
       "compiled_wiki_refs": [
@@ -251,6 +269,26 @@
       ],
       "compiled_wiki_citation_excerpt": "anchor:创业板指(stable/pass)",
       "compiled_wiki_path_excerpt": "domain\\anchors\\anchor_创业板指.md",
+      "compiled_wiki_status": "stable",
+      "compiled_wiki_page_grade": "pass",
+      "compiled_wiki_system_grade": "pass",
+      "compiled_wiki_warning_excerpt": "",
+      "compiled_wiki_validation_needed": false
+    },
+    {
+      "index_or_market_label": "大盘",
+      "trend_judgment": "看涨",
+      "source_video_count": 11,
+      "structure_phrase_excerpt": "上升通道内运行 / 大盘结构观察 / 横盘整理 等",
+      "compiled_wiki_page_count": 1,
+      "compiled_wiki_refs": [
+        "anchor:上证指数"
+      ],
+      "compiled_wiki_ref_paths": [
+        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\anchors\\anchor_上证指数.md"
+      ],
+      "compiled_wiki_citation_excerpt": "anchor:上证指数(stable/pass)",
+      "compiled_wiki_path_excerpt": "domain\\anchors\\anchor_上证指数.md",
       "compiled_wiki_status": "stable",
       "compiled_wiki_page_grade": "pass",
       "compiled_wiki_system_grade": "pass",
@@ -276,49 +314,9 @@
       "compiled_wiki_system_grade": "pass",
       "compiled_wiki_warning_excerpt": "",
       "compiled_wiki_validation_needed": false
-    },
-    {
-      "index_or_market_label": "大盘",
-      "trend_judgment": "待验证",
-      "source_video_count": 9,
-      "structure_phrase_excerpt": "关键位附近徘徊 / 十字星后的方向待确认 / 大盘结构观察 等",
-      "compiled_wiki_page_count": 1,
-      "compiled_wiki_refs": [
-        "anchor:上证指数"
-      ],
-      "compiled_wiki_ref_paths": [
-        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\anchors\\anchor_上证指数.md"
-      ],
-      "compiled_wiki_citation_excerpt": "anchor:上证指数(stable/pass)",
-      "compiled_wiki_path_excerpt": "domain\\anchors\\anchor_上证指数.md",
-      "compiled_wiki_status": "stable",
-      "compiled_wiki_page_grade": "pass",
-      "compiled_wiki_system_grade": "pass",
-      "compiled_wiki_warning_excerpt": "",
-      "compiled_wiki_validation_needed": false
-    },
-    {
-      "index_or_market_label": "上证指数",
-      "trend_judgment": "待验证",
-      "source_video_count": 8,
-      "structure_phrase_excerpt": "趋势待确认 / 待确认 / 趋势待确认 / 逆周线反抽 / 趋势待确认 / 顺周线突破",
-      "compiled_wiki_page_count": 1,
-      "compiled_wiki_refs": [
-        "anchor:上证指数"
-      ],
-      "compiled_wiki_ref_paths": [
-        "F:\\Codex\\projects\\video-summary-workspace\\data\\yunqi-local\\compiled-wiki\\domain\\anchors\\anchor_上证指数.md"
-      ],
-      "compiled_wiki_citation_excerpt": "anchor:上证指数(stable/pass)",
-      "compiled_wiki_path_excerpt": "domain\\anchors\\anchor_上证指数.md",
-      "compiled_wiki_status": "stable",
-      "compiled_wiki_page_grade": "pass",
-      "compiled_wiki_system_grade": "pass",
-      "compiled_wiki_warning_excerpt": "",
-      "compiled_wiki_validation_needed": false
     }
   ],
-  "mixed_context_note": "mixed_context 候选 35 条，其中 panorama-rich 12 条，但标题偏港美风格的样本仍有 31 条，当前继续以 A 股精选批次学习更稳妥。",
+  "mixed_context_note": "mixed_context 候选 35 条，其中 panorama-rich 2 条，但标题偏港美风格的样本仍有 31 条，当前继续以 A 股精选批次学习更稳妥。",
   "mixed_context_sample_titles": [
     "7578682709753498914港股持续盘整，恒科触底了吗？",
     "7581280573109341480港股稳转强，证券板块大涨，后市怎么看？",
