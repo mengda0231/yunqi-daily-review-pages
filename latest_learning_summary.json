@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T01:33:57",
+  "generated_at": "2026-04-10T16:04:13",
   "learning_rollup_generated_at": "2026-04-09T10:52:28",
   "processing_index_generated_at": "2026-04-09T06:24:36",
   "batch_count": 43,
@@ -19,7 +19,7 @@
   "geometry_confirmed_count": 27,
   "geometry_inferred_count": 9,
   "geometry_confirmed_rate": 0.675,
-  "anchor_quality_score": 0.752,
+  "anchor_quality_score": 0.726,
   "compiled_wiki_system_grade": "pass",
   "compiled_wiki_page_count": 478,
   "compiled_wiki_stable_page_count": 84,
@@ -325,24 +325,24 @@
   "selection_strategy_note": "当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。",
   "recent_learning_effects": [
     {
-      "pass_id": "2026-04-09-waiting-upgrade-under-weak-panorama-batch_learning",
-      "focus_family": "局部升级出现但大盘 panorama 仍待验证的 waiting-upgrade 链",
+      "pass_id": "2026-04-10-trendline-loss-breadth-baseline-batch_learning",
+      "focus_family": "对象中心宽样本基线：趋势线失守",
       "evidence_status": "hardening_in_progress",
       "learned_phenomena": [
-        "局部升级 clue 可以明显增多，但大盘 panorama 仍然可能反复停在 待验证。",
-        "通道运行、横盘整理、反弹修复 在这批里比标题里的 强词 更稳定，说明图比词更保守。"
+        "趋势线失守的稳定核心是前一反弹或承接链的几何支撑合同被取消，而不是碰到一条斜线。",
+        "失守后回到关键位附近但没有通过，是高价值 current-event，因为它说明原趋势线职责已经翻成反压或分水岭。"
       ],
-      "next_high_return_action": "继续寻找局部升级已出现且 market panorama 也同步转强的样本，补最终升级门。"
+      "next_high_return_action": "切到 priority 4：回踩二分法，把 bullish retest 和 bearish failed retest 的边界再压实。"
     },
     {
-      "pass_id": "2026-04-09-survivor-object-cross-context-contrast-multicontext_backfill",
-      "focus_family": "mixed_context survivor objects 与 A股主链对象成熟度对照收束",
+      "pass_id": "2026-04-10-retest-split-breadth-baseline-batch_learning",
+      "focus_family": "对象中心宽样本基线：回踩二分法",
       "evidence_status": "hardening_in_progress",
       "learned_phenomena": [
-        "破位 family 的对象成熟度目前最高，因为它已经完成 warning-state 与 confirmed-state 的阶段拆分。",
-        "通道 family 的跨环境稳定性主要来自子对象稳定，而不是 raw 通道 lexical group 稳定。"
+        "健康回踩确认的稳定核心是回到关键下沿后承接继续成立。",
+        "反抽到边界失败的稳定核心是回到失守边界或关键上沿后没有通过，反而确认阻力职责。"
       ],
-      "next_high_return_action": "优先继续硬化 压力位 与 支撑位 的边界来源分流，同时继续把 破位 保持在 phase-split 接口下、把 通道 固定为子对象调用。"
+      "next_high_return_action": "切到 priority 5：压力位二分法，把 retest 背后的边界来源再压实。"
     }
   ]
 }
