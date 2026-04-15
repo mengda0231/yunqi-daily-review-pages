@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-10T16:08:23",
+  "generated_at": "2026-04-15T16:07:37",
   "learning_rollup_generated_at": "2026-04-09T10:52:28",
-  "processing_index_generated_at": "2026-04-09T06:24:36",
+  "processing_index_generated_at": "2026-04-14T23:31:12",
   "batch_count": 43,
   "pass_count": 26,
   "selected_video_count": 171,
   "learned_video_count": 171,
-  "ready_for_learning_count": 180,
-  "scanned_video_count": 592,
-  "a_share_primary_count": 333,
-  "mixed_context_count": 56,
+  "ready_for_learning_count": 5,
+  "scanned_video_count": 5,
+  "a_share_primary_count": 5,
+  "mixed_context_count": 0,
   "trigger_item_count": 4410,
   "panorama_item_count": 255,
   "stable_trigger_group_count": 193,
@@ -19,7 +19,7 @@
   "geometry_confirmed_count": 27,
   "geometry_inferred_count": 9,
   "geometry_confirmed_rate": 0.675,
-  "anchor_quality_score": 0.726,
+  "anchor_quality_score": 0.753,
   "compiled_wiki_system_grade": "pass",
   "compiled_wiki_page_count": 478,
   "compiled_wiki_stable_page_count": 84,
@@ -325,24 +325,24 @@
   "selection_strategy_note": "当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。",
   "recent_learning_effects": [
     {
-      "pass_id": "2026-04-10-trendline-loss-breadth-baseline-batch_learning",
-      "focus_family": "对象中心宽样本基线：趋势线失守",
+      "pass_id": "2026-04-14-reclassification-still-not-enough-batch_learning",
+      "focus_family": "待重分类仍不够 / 支撑反弹非底部 / must-reclaim gate",
       "evidence_status": "hardening_in_progress",
       "learned_phenomena": [
-        "趋势线失守的稳定核心是前一反弹或承接链的几何支撑合同被取消，而不是碰到一条斜线。",
-        "失守后回到关键位附近但没有通过，是高价值 current-event，因为它说明原趋势线职责已经翻成反压或分水岭。"
+        "低一级边界被收回，常常只意味着 `待重分类` 或 `修复观察`，并不意味着更高一级 bullish contract 已经恢复。",
+        "关键阴线高点、颈线、密集区压力等更高一级边界，往往才是真正的 must-reclaim gate。"
       ],
-      "next_high_return_action": "切到 priority 4：回踩二分法，把 bullish retest 和 bearish failed retest 的边界再压实。"
+      "next_high_return_action": "['继续沿同一对象补 must-reclaim gate -> deeper fallback 的连续链。', '继续补 support bounce not bottom 与 true base-building 的正反对照。', '继续补真上涨中继正锚，避免系统只会压误判不会识别真实 continuation。']"
     },
     {
-      "pass_id": "2026-04-10-retest-split-breadth-baseline-batch_learning",
-      "focus_family": "对象中心宽样本基线：回踩二分法",
+      "pass_id": "2026-04-14-range-rebound-not-bull-restart-batch_learning",
+      "focus_family": "区间内强反弹 / 阳线范围停顿 / 主升浪未启动",
       "evidence_status": "hardening_in_progress",
       "learned_phenomena": [
-        "健康回踩确认的稳定核心是回到关键下沿后承接继续成立。",
-        "反抽到边界失败的稳定核心是回到失守边界或关键上沿后没有通过，反而确认阻力职责。"
+        "宽幅区间里的强反弹经常只是区间内部的大幅摆动，不自动构成趋势重启。",
+        "反弹后的关键观察点不是涨幅本身，而是后续 3-5 天能否维持在关键阳线范围内震荡。"
       ],
-      "next_high_return_action": "切到 priority 5：压力位二分法，把 retest 背后的边界来源再压实。"
+      "next_high_return_action": "['继续补 `强反弹后 3-5 天承接成功 -> 上沿通过` 的正向样本。', '继续补 `强反弹后跌破关键阳线低点 -> 回到区间 / 突破失败` 的负向样本。', '把这条链和 `上涨中继 admission gate` 再做一次对照，避免误把宽幅区间内的强摆动包装成上涨中继。']"
     }
   ]
 }
