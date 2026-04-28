@@ -104,7 +104,7 @@
       <h1>云起日复盘看板</h1>
       <p>首页先看当天主判断、关键观察位、几大指数和组别动作。更深的学习统计、证据层和系统信息都下沉处理，方便先判断，再研究。</p>
       <div class="summary-date">复盘日期：2026-04-28</div>
-      <div class="version-chip" id="current-version">版本：2026-04-28-4d8d5851</div>
+      <div class="version-chip" id="current-version">版本：2026-04-28-dual-strict-v2</div>
     </div>
     <div class="summary-grid">
       <section class="summary-card">
@@ -855,11 +855,23 @@
     <div class="learning-grid">
       <section class="learning-card learning-overview-card">
         <h2>这轮学到了什么</h2>
-        <div class="learning-meta">面板刷新：2026-04-28T16:39:06 | 学习汇总：2026-04-17T09:50:31</div>
-        <div class="learning-note"><strong>当前主线：</strong>当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。</div>
-        <div class="learning-note"><strong>优先可学池：</strong>80 条前处理已就绪，当前深学完成 83 条，全扫描总量 592 条。</div>
-        <div class="learning-note"><strong>最新对象硬化：</strong></div>
-        <ul><li>暂无</li></ul>
+        <div class="learning-meta">面板刷新：2026-04-28T21:57:38 | derived 学习汇总：dual strict v2</div>
+        <div class="learning-note"><strong>当前主线：</strong>本页发布的是 derived 学习面板，不代表 clean mainline 已生效；当前 direct mainline promotion 仍被阻断，只允许继续 dry-run 验证。</div>
+        <div class="learning-note"><strong>Dual strict 结果：</strong>111 条 derived rows 中，numeric_strict 102 条，structural_strict 6 条，combined strict rate 97.3%；3 条仍保留为 hold/holdout_review。</div>
+        <div class="learning-note"><strong>Holdout v2：</strong>20 条 holdout 覆盖 19 个视频，combined strict 95.0%；正向 holdout 19/19 strict，1 条负控边界样本单独隔离。</div>
+        <div class="learning-note"><strong>关键边界：</strong>structural_strict 只能支撑结构线/形态复盘，不能伪装成数字价位复盘；光伏 bearish 样本用于学习“目标价/风险位不等于看多”。</div>
+      </section>
+      <section class="learning-card">
+        <h2>复盘能力 strict readiness</h2>
+        <div class="metric-grid">
+          <div class="metric-box"><div class="metric-value">102/111</div><div class="metric-label">numeric strict：可做数字价位复盘</div></div>
+          <div class="metric-box"><div class="metric-value">6/111</div><div class="metric-label">structural strict：只做结构/线型复盘</div></div>
+          <div class="metric-box"><div class="metric-value">97.3%</div><div class="metric-label">combined strict readiness</div></div>
+          <div class="metric-box"><div class="metric-value">19/19</div><div class="metric-label">正向 holdout strict</div></div>
+        </div>
+        <div class="learning-note"><strong>效果提升：</strong>这次不是用小样本自证，而是把 numeric/structural/negative boundary 拆开评分，降低“把看空边界误入正例”和“无数字样本硬写数字复盘”的风险。</div>
+        <div class="learning-note"><strong>负控保留：</strong>光伏 bearish boundary 共 3 条，包含旗形/头肩顶目标风险与破位区间样本，继续作为边界学习包，不进入正例泛化。</div>
+        <div class="learning-note"><strong>主线状态：</strong>JSON parse 与 py_compile 读回通过；dry-run allowed = true，direct mainline promotion allowed = false。</div>
       </section>
       <section class="learning-card">
         <h2>消费层接入提醒</h2>
@@ -917,18 +929,18 @@
           <section class="admin-card">
             <h2>版本信息</h2>
             <div class="admin-meta">
-              当前版本：<strong>2026-04-28-4d8d5851</strong><br>
+              当前版本：<strong>2026-04-28-dual-strict-v2</strong><br>
               复盘日期：2026-04-28<br>
-              构建时间：2026-04-28 16:39:06<br>
-              来源提交：4d8d5851<br>
-              提交说明：backup: local noon snapshot 2026-04-28 12:00:05<br>
-              发布方式：本地策略迭代后，按计划任务自动生成并推送到 GitHub Pages
+              构建时间：2026-04-28 21:57:38<br>
+              来源提交：72314206<br>
+              提交说明：publish derived dual strict learning dashboard<br>
+              发布方式：本地 derived 学习评估后，手动更新并推送到 GitHub Pages
             </div>
             <button class="admin-btn" id="update-button" type="button" disabled>更新由定时任务触发</button>
           </section>
           <section class="admin-card">
             <h2>最近更新日志</h2>
-            <div class="history-item"><div class="history-title">暂无更新记录</div></div>
+            <div class="history-item"><div class="history-title">复盘能力学习主线 dual strict 面板更新</div><div class="history-meta">2026-04-28 21:57:38 · 2026-04-28-dual-strict-v2</div><ul><li>新增 numeric_strict / structural_strict / combined strict 指标。</li><li>新增 holdout v2 正负分离结果，正向 19/19 strict，光伏 bearish 负控单独保留。</li><li>明确本页为 derived 面板；clean mainline unchanged，direct promotion blocked。</li></ul></div>
           </section>
         </div>
       </details>

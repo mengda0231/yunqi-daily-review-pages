@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "built_at": "2026-04-28 21:57:38",
+    "version_label": "2026-04-28-dual-strict-v2",
+    "title": "复盘能力学习主线 dual strict 面板更新",
+    "items": [
+      "发布 numeric_strict / structural_strict 拆分指标。",
+      "发布 holdout v2 正负分离结果。",
+      "标注 clean mainline unchanged 与 direct promotion blocked。"
+    ]
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T16:39:06",
+  "generated_at": "2026-04-28T21:57:38",
   "learning_rollup_generated_at": "2026-04-17T09:50:31",
   "processing_index_generated_at": "2026-04-20T18:25:10",
   "batch_count": 49,
@@ -329,5 +329,245 @@
     "7569776265549450539港股全面大涨，芯片飙升6.2%，后市怎么走？"
   ],
   "selection_strategy_note": "当前学习主线采用 5 条一学的 A 股精选批次，先稳住图文对齐和规则升格，再择机引入 mixed-context 压力测试。",
-  "recent_learning_effects": []
+  "recent_learning_effects": [
+    "Dual strict readiness 已拆成 numeric_strict 与 structural_strict，避免把结构样本硬说成数字复盘。",
+    "111 条 derived rows 中 combined strict 为 97.3%，但仍保留 3 条 hold/holdout_review。",
+    "holdout v2 正向样本 19/19 strict，1 条光伏负控单独隔离。",
+    "mainline dry-run precheck 允许继续试跑，但不允许直接污染 clean mainline。"
+  ],
+  "latest_capability_update": {
+    "generated_at": "2026-04-28T21:57:38",
+    "source_lane": "F:\\Codex\\state\\yunqi-tooling-upgrade\\2026-04-24\\kline-pattern-learning-lane",
+    "non_mutation_notice": "derived GitHub Pages dashboard only; clean mainline unchanged",
+    "recap_readiness_dual_strict_v3": {
+      "row_count": 111,
+      "class_counts_v3": {
+        "numeric_strict": 102,
+        "structural_strict": 6,
+        "holdout_review": 2,
+        "hold": 1
+      },
+      "numeric_strict_rate_v3": 0.9189,
+      "structural_strict_rate_v3": 0.0541,
+      "combined_strict_rate_v3": 0.973,
+      "holdout_or_hold_count": 3,
+      "effect_assessment": "numeric/structural 分类进一步校准；不追求把无数字结构样本硬升 numeric。"
+    },
+    "holdout_dual_strict_v2": {
+      "holdout_row_count": 20,
+      "holdout_video_count": 19,
+      "dual_class_counts_v2": {
+        "numeric_strict": 17,
+        "holdout_review": 1,
+        "structural_strict": 2
+      },
+      "dual_numeric_strict_rate_v2": 0.85,
+      "dual_structural_strict_rate_v2": 0.1,
+      "dual_combined_strict_rate_v2": 0.95,
+      "remaining_unmapped_count": 0,
+      "holdout_review_count": 1,
+      "effect_assessment": "2 条 legacy-only 仅安全映射为 structural_strict；不伪装成 numeric strict。"
+    },
+    "holdout_positive_negative_split": {
+      "positive_row_count": 19,
+      "positive_combined_strict_count": 19,
+      "positive_combined_strict_rate": 1.0,
+      "negative_boundary_row_count": 1,
+      "negative_boundary_kept_out_of_positive_strict": 1,
+      "overall_interpretation": "positive readiness passes after excluding explicit negative/boundary holdout; negative case is retained as boundary learning, not a positive failure."
+    },
+    "photovoltaic_bearish_boundary": {
+      "case_count": 3,
+      "family_counts": {
+        "bearish_flag_or_head_shoulders_target_risk": 2,
+        "bearish_horizontal_range_under_head_shoulders": 1
+      },
+      "effect_assessment": "把 3 条光伏 holdout 固化为负控/边界学习样本，提升“不能误判为收复/反转”的能力，而不是刷 ready。"
+    },
+    "mainline_dry_run_precheck": {
+      "json_parse_ok": true,
+      "dry_run_allowed": true,
+      "direct_mainline_promotion_allowed": false,
+      "decision": "dry_run_allowed_but_direct_mainline_promotion_blocked",
+      "reason": "derived and holdout readiness improved, but mainline artifacts were not rerun/readback in this pass and negative/boundary lane must stay separate."
+    },
+    "mainline_readback": {
+      "script_py_compile_ok": true,
+      "parsed_artifacts": {
+        "candidate_stage_queue.json": {
+          "parse_ok": true,
+          "kind": "yunqi_teacher_capability_candidate_stage_queue",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "candidate_stage_id",
+            "source_reasoning_map_count",
+            "selection_strategy",
+            "target_objects",
+            "object_summaries",
+            "candidate_records"
+          ]
+        },
+        "candidate_expansion_learning_report.json": {
+          "parse_ok": true,
+          "kind": "yunqi_teacher_capability_candidate_expansion_report",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "report_id",
+            "base_clean_mainline_batch_id",
+            "expansion_mode",
+            "candidate_stage_snapshot",
+            "expansion_topic_count",
+            "blocked_target_count",
+            "topic_reports",
+            "blocked_targets",
+            "recurring_issue_audit",
+            "next_priority_targets",
+            "next_actions"
+          ]
+        },
+        "verification_note.json": {
+          "parse_ok": true,
+          "kind": "yunqi_teacher_capability_verification_note",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "verification_note_id",
+            "batch_id",
+            "verification_mode",
+            "state_eval",
+            "fix_eval",
+            "regression_eval",
+            "research_checks",
+            "risk_boundaries"
+          ]
+        },
+        "learning_gradecard.json": {
+          "parse_ok": true,
+          "kind": "yunqi_learning_gradecard",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "batch_id",
+            "scope",
+            "evidence_gate_integrity",
+            "candidate_expansion_integrity",
+            "eval_replay_integrity",
+            "writeback_integrity",
+            "coverage_balance",
+            "metrics",
+            "final_verdict",
+            "reasons"
+          ]
+        },
+        "teacher_capability_study_handbook.json": {
+          "parse_ok": true,
+          "kind": "yunqi_teacher_capability_study_handbook",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "handbook_id",
+            "batch_id",
+            "workflow_model",
+            "learning_goal",
+            "benchmark_role",
+            "evidence_gate_snapshot",
+            "capability_pool_snapshot",
+            "eval_snapshot",
+            "study_sequence",
+            "study_rules",
+            "alias_memory",
+            "speech_header_resolution_view",
+            "process_hardening_view",
+            "frontend_replay_contract",
+            "truth_state_view",
+            "capability_lanes",
+            "four_mode_replay_anchors",
+            "topic_ledgers",
+            "next_actions"
+          ]
+        },
+        "task_state_checkpoint.json": {
+          "parse_ok": true,
+          "kind": "yunqi_teacher_capability_task_state_checkpoint",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "checkpoint_id",
+            "batch_id",
+            "batch_dir_name",
+            "task_class",
+            "complexity_level",
+            "maintained_source_root",
+            "workflow_model",
+            "framework_sync_status",
+            "current_status",
+            "solved_problems",
+            "open_loops",
+            "do_not_repeat",
+            "next_actions",
+            "good_trace_candidate"
+          ]
+        },
+        "teacher_capability_learning_manifest.json": {
+          "parse_ok": true,
+          "kind": "yunqi_teacher_capability_learning_manifest",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "manifest_id",
+            "batch_id",
+            "batch_dir_name",
+            "mainline_mode",
+            "workflow_integration",
+            "evidence_gate_snapshot",
+            "learning_focus",
+            "frontend_review_contract",
+            "capability_pool_snapshot",
+            "pattern_card_snapshot",
+            "eval_pack_snapshot",
+            "hard_eval_pack_snapshot",
+            "four_mode_pack_snapshot",
+            "session_003_review_snapshot",
+            "artifact_contract",
+            "selected_benchmarks",
+            "selected_source_videos"
+          ]
+        },
+        "teacher_capability_replay_session_003.json": {
+          "parse_ok": true,
+          "kind": "yunqi_teacher_capability_replay_session",
+          "keys": [
+            "schema_version",
+            "kind",
+            "generated_at",
+            "session_id",
+            "batch_id",
+            "workflow_model",
+            "session_goal",
+            "session_route",
+            "input_gate_snapshot",
+            "replay_contract",
+            "verifier_summary",
+            "session_summary",
+            "topic_replays"
+          ]
+        }
+      }
+    },
+    "interpretation": [
+      "numeric_strict 表示有稳定数字价位角色，适合数字价位复盘。",
+      "structural_strict 表示结构价位角色成立但不能伪装成数字复盘。",
+      "光伏 bearish 样本保留为负控/边界学习，不算正向通过。",
+      "当前允许 dry-run 继续验证，但 direct mainline promotion 仍被阻断。"
+    ]
+  }
 }

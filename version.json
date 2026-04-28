@@ -1,11 +1,13 @@
 {
-  "version_label": "2026-04-28-4d8d5851",
+  "version_label": "2026-04-28-dual-strict-v2",
   "report_date": "2026-04-28",
-  "built_at": "2026-04-28 16:39:06",
-  "source_commit": "4d8d5851eb2bec6ea383e935f4eaf85f0a3c3641",
-  "source_commit_short": "4d8d5851",
-  "source_commit_subject": "backup: local noon snapshot 2026-04-28 12:00:05",
+  "built_at": "2026-04-28 21:57:38",
+  "source_commit": "723142069f85eae6a949e514a31c11ed5059237d",
+  "source_commit_short": "72314206",
+  "source_commit_subject": "publish derived dual strict learning dashboard",
   "summary_points": [
-    "**宽基不是单边突破局，而是大箱体里的确认局。** 周线_regime：上证、深成指、创业板、科创50、北证50整体仍以大箱体震荡为底色；daily_setup：上证、科创50、北证50为震荡等待确认，深成指、创业板虽顺周线突破但仍是突破未确认；structure：大平台内小横盘、上沿通过后待确认、跌后弱整理并存；signal：横盘与压力位博弈没有形成统一向上跟随；condition：上证看 `4142.56/4066.16`，深成指看 `15248.44/13880.06`，创业板看 `3785.23/3257.44`；time window：先按 `2-3天` 看假跌破回收，`3-5天` 看突破跟随；conclusion：维持修复观察与等突破确认，不把箱体边界震荡提前判成趋势反转。"
+    "复盘能力学习面板更新为 dual strict：111 条 derived rows，numeric strict 102 条，structural strict 6 条，combined strict 97.3%。",
+    "holdout v2 采用正负分离：正向 holdout 19/19 strict，1 条光伏 bearish 作为负控/边界学习保留，不升格为正例。",
+    "当前只是 GitHub Pages derived 面板更新；clean mainline 未改，direct mainline promotion 仍被阻断。"
   ]
 }
