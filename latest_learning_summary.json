@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T16:41:22",
+  "generated_at": "2026-05-12T21:07:50",
   "learning_rollup_generated_at": "2026-04-17T09:50:31",
   "processing_index_generated_at": "2026-04-20T18:25:10",
   "batch_count": 49,
@@ -19,7 +19,7 @@
   "geometry_confirmed_count": 27,
   "geometry_inferred_count": 10,
   "geometry_confirmed_rate": 0.6585,
-  "anchor_quality_score": 0.757,
+  "anchor_quality_score": 0.753,
   "compiled_wiki_system_grade": "pass",
   "compiled_wiki_page_count": 478,
   "compiled_wiki_stable_page_count": 84,
